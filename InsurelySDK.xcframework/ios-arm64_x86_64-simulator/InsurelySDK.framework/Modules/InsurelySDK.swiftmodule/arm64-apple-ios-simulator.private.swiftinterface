@@ -1,0 +1,513 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.3.2 effective-5.10 (swiftlang-6.3.2.1.108 clang-2100.1.1.101)
+// swift-module-flags: -target arm64-apple-ios17.5-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name InsurelySDK
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.3.2
+import Combine
+import Foundation
+@_exported import InsurelySDK
+import OSLog
+import Swift
+import SwiftUI
+import UIKit
+@preconcurrency import WebKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+import _WebKit_SwiftUI
+public enum InsurelyLogLevel : Swift.Int {
+  case none
+  case error
+  case all
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+extension InsurelySDK.InsurelyLogLevel : Swift.Comparable {
+  public static func == (lhs: InsurelySDK.InsurelyLogLevel, rhs: InsurelySDK.InsurelyLogLevel) -> Swift.Bool
+  public static func < (lhs: InsurelySDK.InsurelyLogLevel, rhs: InsurelySDK.InsurelyLogLevel) -> Swift.Bool
+}
+extension os.Logger {
+  public static var insurelyLogLevel: InsurelySDK.InsurelyLogLevel
+}
+extension InsurelySDK.InsurelyConfiguration {
+  public struct Agent : Swift.Codable {
+    public var type: Swift.String
+    public init(type: Swift.String)
+    public static let sdk: InsurelySDK.InsurelyConfiguration.Agent
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+}
+extension InsurelySDK.InsurelyPrefill {
+  public struct DataAggregation : Swift.Codable {
+    public var company: Swift.String?
+    public var companies: [Swift.String]?
+    public var autostart: Swift.Bool
+    public var loginMethod: Swift.String?
+    public init(company: Swift.String? = nil, companies: [Swift.String]? = nil, autostart: Swift.Bool, loginMethod: Swift.String? = nil)
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+}
+public struct InvalidAuthTokenEvent : InsurelySDK.InsurelyEvent {
+  public static let name: Swift.String
+  public let value: Any?
+  public init(_ value: Any?)
+  public static func make(from rawPayload: [Swift.String : Any]) throws -> InsurelySDK.InvalidAuthTokenEvent
+}
+public struct AuthTokenExpiringSoonEvent : InsurelySDK.InsurelyEvent {
+  public static let name: Swift.String
+  public let value: Any?
+  public init(_ value: Any?)
+  public static func make(from rawPayload: [Swift.String : Any]) throws -> InsurelySDK.AuthTokenExpiringSoonEvent
+}
+public struct CollectionIDEvent : InsurelySDK.InsurelyEvent, Swift.Decodable {
+  public static let name: Swift.String
+  public let collectionID: Swift.String
+  public init(collectionID: Swift.String)
+  public static func make(from rawPayload: [Swift.String : Any]) throws -> InsurelySDK.CollectionIDEvent
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct InsurelyConfiguration : Swift.Codable {
+  public static func resumeCodeInput(agent: InsurelySDK.InsurelyConfiguration.Agent = .sdk) -> InsurelySDK.InsurelyConfiguration
+  public var customerId: Swift.String?
+  public var configName: Swift.String?
+  public var resumeCode: Swift.String?
+  public var agent: InsurelySDK.InsurelyConfiguration.Agent?
+  public var showCloseButton: Swift.Bool?
+  public var showBackButton: Swift.Bool?
+  public var language: InsurelySDK.InsurelyConfiguration.Language?
+  public var customization: InsurelySDK.InsurelyConfiguration.Customization?
+  public var themeMode: InsurelySDK.InsurelyConfiguration.ThemeMode?
+  public var dataAggregation: InsurelySDK.InsurelyConfiguration.DataAggregation?
+  public var showResumeInput: Swift.Bool?
+  public init(customerId: Swift.String, configName: Swift.String, agent: InsurelySDK.InsurelyConfiguration.Agent = .sdk, showCloseButton: Swift.Bool? = nil, showBackButton: Swift.Bool? = nil, language: InsurelySDK.InsurelyConfiguration.Language? = nil, customization: InsurelySDK.InsurelyConfiguration.Customization? = nil, themeMode: InsurelySDK.InsurelyConfiguration.ThemeMode? = nil, dataAggregation: InsurelySDK.InsurelyConfiguration.DataAggregation? = nil)
+  public init(resumeCode: Swift.String, agent: InsurelySDK.InsurelyConfiguration.Agent = .sdk, showCloseButton: Swift.Bool? = nil, showBackButton: Swift.Bool? = nil, language: InsurelySDK.InsurelyConfiguration.Language? = nil, customization: InsurelySDK.InsurelyConfiguration.Customization? = nil, themeMode: InsurelySDK.InsurelyConfiguration.ThemeMode? = nil, dataAggregation: InsurelySDK.InsurelyConfiguration.DataAggregation? = nil)
+  public init(agent: InsurelySDK.InsurelyConfiguration.Agent = .sdk, showCloseButton: Swift.Bool? = nil, showBackButton: Swift.Bool? = nil, language: InsurelySDK.InsurelyConfiguration.Language? = nil, customization: InsurelySDK.InsurelyConfiguration.Customization? = nil, themeMode: InsurelySDK.InsurelyConfiguration.ThemeMode? = nil, dataAggregation: InsurelySDK.InsurelyConfiguration.DataAggregation? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct OnInsurelyErrorKey : SwiftUICore.EnvironmentKey {
+  public static let defaultValue: ((InsurelySDK.InsurelyError) -> Swift.Void)?
+  public typealias Value = ((InsurelySDK.InsurelyError) -> Swift.Void)?
+}
+extension SwiftUICore.View {
+  @_Concurrency.MainActor @preconcurrency public func onInsurelyError(_ handler: ((InsurelySDK.InsurelyError) -> Swift.Void)?) -> some SwiftUICore.View
+  
+}
+@_Concurrency.MainActor @preconcurrency public struct OnInsurelyErrorModifier : SwiftUICore.ViewModifier {
+  @_Concurrency.MainActor @preconcurrency public func body(content: InsurelySDK.OnInsurelyErrorModifier.Content) -> some SwiftUICore.View
+  
+  public typealias Body = @_opaqueReturnTypeOf("$s11InsurelySDK02OnA13ErrorModifierV4body7contentQr7SwiftUI05_ViewE8_ContentVyACG_tF", 0) __
+}
+@_Concurrency.MainActor @preconcurrency public struct InsurelyView : SwiftUICore.View {
+  @_Concurrency.MainActor @preconcurrency public init(context: InsurelySDK.InsurelyContext, configuration: InsurelySDK.InsurelyConfiguration, prefill: InsurelySDK.InsurelyPrefill? = nil)
+  @_Concurrency.MainActor @preconcurrency public var body: some SwiftUICore.View {
+    get
+  }
+  public typealias Body = @_opaqueReturnTypeOf("$s11InsurelySDK0A4ViewV4bodyQrvp", 0) __
+}
+public struct InsurelyEnvironment : Swift.Equatable, Swift.Codable, Swift.Hashable {
+  public static let production: InsurelySDK.InsurelyEnvironment
+  public static let staging: InsurelySDK.InsurelyEnvironment
+  public static let test: InsurelySDK.InsurelyEnvironment
+  public static func custom(url: Foundation.URL) -> InsurelySDK.InsurelyEnvironment
+  public static func == (a: InsurelySDK.InsurelyEnvironment, b: InsurelySDK.InsurelyEnvironment) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct InsurelyResults {
+  public let data: Any
+}
+extension InsurelySDK.InsurelyConfiguration {
+  public struct LegalDocuments : Swift.Codable {
+    public var termsAndConditions: Swift.String?
+    public var privacyPolicy: Swift.String?
+    public var cookiePolicy: Swift.String?
+    public init(termsAndConditions: Swift.String? = nil, privacyPolicy: Swift.String? = nil, cookiePolicy: Swift.String? = nil)
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+}
+public struct CollectionInitiatedEvent : InsurelySDK.InsurelyEvent, Swift.Decodable {
+  public static let name: Swift.String
+  public let personalNumber: Swift.String?
+  public init(personalNumber: Swift.String?)
+  public static func make(from rawPayload: [Swift.String : Any]) throws -> InsurelySDK.CollectionInitiatedEvent
+  public init(from decoder: any Swift.Decoder) throws
+}
+extension InsurelySDK.InsurelyConfiguration {
+  public struct Fonts : Swift.Codable {
+    public var headlineFont: InsurelySDK.InsurelyConfiguration.Font?
+    public var bodyFont: InsurelySDK.InsurelyConfiguration.Font?
+    public init(headlineFont: InsurelySDK.InsurelyConfiguration.Font? = nil, bodyFont: InsurelySDK.InsurelyConfiguration.Font? = nil)
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+}
+public enum InsurelyError : Swift.Error {
+  case failedToOpenBankID
+  public static func == (a: InsurelySDK.InsurelyError, b: InsurelySDK.InsurelyError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct WaitingForInitializationEvent : InsurelySDK.InsurelyEvent {
+  public static let name: Swift.String
+  public let value: Any?
+  public init(_ value: Any?)
+  public static func make(from rawPayload: [Swift.String : Any]) throws -> InsurelySDK.WaitingForInitializationEvent
+}
+public struct ReturnToBrowserEvent : InsurelySDK.InsurelyEvent {
+  public static let name: Swift.String
+  public let url: Swift.String
+  public init(url: Swift.String)
+  public static func make(from rawPayload: [Swift.String : Any]) throws -> InsurelySDK.ReturnToBrowserEvent
+}
+public struct InitializeAppEvent : InsurelySDK.InsurelyEvent, Swift.Decodable {
+  public static let name: Swift.String
+  public struct Config : Swift.Equatable, Swift.Decodable {
+    public let configName: Swift.String?
+    public let customerId: Swift.String?
+    public let resumeCode: Swift.String?
+    public let isWebView: Swift.Int
+    public let parentOrigin: Swift.String
+    public let parentUrl: Swift.String
+    public init(configName: Swift.String?, customerId: Swift.String?, resumeCode: Swift.String?, isWebView: Swift.Int, parentOrigin: Swift.String, parentUrl: Swift.String)
+    public static func == (a: InsurelySDK.InitializeAppEvent.Config, b: InsurelySDK.InitializeAppEvent.Config) -> Swift.Bool
+    public init(from decoder: any Swift.Decoder) throws
+  }
+  public struct Prefill : Swift.Equatable, Swift.Decodable {
+    public init()
+    public static func == (a: InsurelySDK.InitializeAppEvent.Prefill, b: InsurelySDK.InitializeAppEvent.Prefill) -> Swift.Bool
+    public init(from decoder: any Swift.Decoder) throws
+  }
+  public let config: InsurelySDK.InitializeAppEvent.Config
+  public let prefill: InsurelySDK.InitializeAppEvent.Prefill?
+  public init(config: InsurelySDK.InitializeAppEvent.Config, prefill: InsurelySDK.InitializeAppEvent.Prefill?)
+  public static func make(from rawPayload: [Swift.String : Any]) throws -> InsurelySDK.InitializeAppEvent
+  public init(from decoder: any Swift.Decoder) throws
+}
+extension InsurelySDK.InsurelyConfiguration {
+  public struct Theme : Swift.Codable {
+    public var colorBrand: Swift.String?
+    public var colorInteractive: Swift.String?
+    public var colorWarning: Swift.String?
+    public var colorError: Swift.String?
+    public var colorSuccess: Swift.String?
+    public var colorInfo: Swift.String?
+    public var colorSurfaceAlternate: Swift.String?
+    public var colorSurfaceAlternateTableRow: Swift.String?
+    public var colorSurfaceButtonPrimary: Swift.String?
+    public var colorSurfaceButtonSecondary: Swift.String?
+    public var colorHeadline: Swift.String?
+    public var colorBody: Swift.String?
+    public var colorOnSurfaceButtonPrimary: Swift.String?
+    public var colorOnSurfaceButtonSecondary: Swift.String?
+    public var colorLink: Swift.String?
+    public var radiusButton: Swift.String?
+    public var radiusInteractiveElements: Swift.String?
+    public init(colorBrand: Swift.String? = nil, colorInteractive: Swift.String? = nil, colorWarning: Swift.String? = nil, colorError: Swift.String? = nil, colorSuccess: Swift.String? = nil, colorInfo: Swift.String? = nil, colorSurfaceAlternate: Swift.String? = nil, colorSurfaceAlternateTableRow: Swift.String? = nil, colorSurfaceButtonPrimary: Swift.String? = nil, colorSurfaceButtonSecondary: Swift.String? = nil, colorHeadline: Swift.String? = nil, colorBody: Swift.String? = nil, colorOnSurfaceButtonPrimary: Swift.String? = nil, colorOnSurfaceButtonSecondary: Swift.String? = nil, colorLink: Swift.String? = nil, radiusButton: Swift.String? = nil, radiusInteractiveElements: Swift.String? = nil)
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+}
+public enum CollectionStatus {
+  case running
+  case login
+  case collecting
+  case completed
+  case other
+  public init(_ value: Swift.String?)
+  public static func == (a: InsurelySDK.CollectionStatus, b: InsurelySDK.CollectionStatus) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct CollectionStatusEvent : InsurelySDK.InsurelyEvent {
+  public static let name: Swift.String
+  public let status: InsurelySDK.CollectionStatus
+  public let value: Swift.String
+  public init(_ value: Any?)
+  public static func make(from rawPayload: [Swift.String : Any]) throws -> InsurelySDK.CollectionStatusEvent
+}
+extension InsurelySDK.InsurelyPrefill {
+  public struct User : Swift.Codable {
+    public var swedishPersonalNumber: Swift.String?
+    public var estonianPersonalNumber: Swift.String?
+    public var estonianPhoneNumber: Swift.String?
+    public var norwegianPersonalNumber: Swift.String?
+    public var norwegianPhoneNumber: Swift.String?
+    public var username: Swift.String?
+    public var sessionId: Swift.String?
+    public init(swedishPersonalNumber: Swift.String? = nil, estonianPersonalNumber: Swift.String? = nil, estonianPhoneNumber: Swift.String? = nil, norwegianPersonalNumber: Swift.String? = nil, norwegianPhoneNumber: Swift.String? = nil, username: Swift.String? = nil, sessionId: Swift.String? = nil)
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+}
+public struct OpenSwedishBankIDEvent : InsurelySDK.InsurelyEvent, Swift.Decodable {
+  public static let name: Swift.String
+  public let url: Swift.String
+  public let autostartToken: Swift.String?
+  public init(url: Swift.String, autostartToken: Swift.String?)
+  public static func make(from rawPayload: [Swift.String : Any]) throws -> InsurelySDK.OpenSwedishBankIDEvent
+  public init(from decoder: any Swift.Decoder) throws
+}
+extension InsurelySDK.InsurelyConfiguration {
+  public struct DataAggregation : Swift.Codable {
+    public var hideResultsView: Swift.Bool?
+    public var legalDocuments: InsurelySDK.InsurelyConfiguration.LegalDocuments?
+    public var multiSelect: Swift.Bool?
+    public var referenceId: Swift.String?
+    public init(hideResultsView: Swift.Bool? = nil, legalDocuments: InsurelySDK.InsurelyConfiguration.LegalDocuments? = nil, multiSelect: Swift.Bool? = nil, referenceId: Swift.String? = nil, showResumeInput: Swift.Bool? = nil)
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+}
+extension InsurelySDK.InsurelyConfiguration {
+  public enum FontResource : Swift.Codable {
+    case url(Swift.String)
+    case webSafeFont(Swift.String)
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+}
+public struct ResetHashEvent : InsurelySDK.InsurelyEvent {
+  public static let name: Swift.String
+  public let value: Swift.Int
+  public init(value: Swift.Int)
+  public static func make(from rawPayload: [Swift.String : Any]) throws -> InsurelySDK.ResetHashEvent
+}
+public struct AppLoadedEvent : InsurelySDK.InsurelyEvent {
+  public static let name: Swift.String
+  public let value: Any?
+  public init(_ value: Any?)
+  public static func make(from rawPayload: [Swift.String : Any]) throws -> InsurelySDK.AppLoadedEvent
+}
+extension InsurelySDK.InsurelyConfiguration {
+  public struct Font : Swift.Codable {
+    public var resource: InsurelySDK.InsurelyConfiguration.FontResource?
+    public var weight: InsurelySDK.InsurelyConfiguration.FontWeight?
+    public init(resource: InsurelySDK.InsurelyConfiguration.FontResource? = nil, weight: InsurelySDK.InsurelyConfiguration.FontWeight? = nil)
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+}
+public struct OnInsurelyResultsKey : SwiftUICore.EnvironmentKey {
+  public static let defaultValue: ((InsurelySDK.InsurelyResults) -> Swift.Void)?
+  public typealias Value = ((InsurelySDK.InsurelyResults) -> Swift.Void)?
+}
+extension SwiftUICore.View {
+  @_Concurrency.MainActor @preconcurrency public func onInsurelyResults(_ handler: ((InsurelySDK.InsurelyResults) -> Swift.Void)?) -> some SwiftUICore.View
+  
+}
+@_Concurrency.MainActor @preconcurrency public struct OnInsurelyResultsModifier : SwiftUICore.ViewModifier {
+  @_Concurrency.MainActor @preconcurrency public func body(content: InsurelySDK.OnInsurelyResultsModifier.Content) -> some SwiftUICore.View
+  
+  public typealias Body = @_opaqueReturnTypeOf("$s11InsurelySDK02OnA15ResultsModifierV4body7contentQr7SwiftUI05_ViewE8_ContentVyACG_tF", 0) __
+}
+public enum PageView {
+  case selectCompanies
+  case selectAuthentication
+  case additionalInfo
+  case collectData
+  case failedCollection
+  case results
+  case emptyResult
+  case insuranceDetails
+  case other
+  public init(_ value: Swift.String)
+  public static func == (a: InsurelySDK.PageView, b: InsurelySDK.PageView) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct PageViewEvent : InsurelySDK.InsurelyEvent {
+  public static let name: Swift.String
+  public let page: InsurelySDK.PageView
+  public let value: Swift.String
+  public init(_ value: Swift.String)
+  public static func make(from rawPayload: [Swift.String : Any]) throws -> InsurelySDK.PageViewEvent
+}
+public typealias WebMessageName = Swift.String
+public protocol WebMessage {
+  var name: Swift.String { get }
+}
+public protocol InsurelyEvent : InsurelySDK.WebMessage {
+  static var name: Swift.String { get }
+  static func make(from rawPayload: [Swift.String : Any]) throws -> Self
+}
+extension InsurelySDK.InsurelyEvent {
+  public var name: Swift.String {
+    get
+  }
+}
+public struct GenericEvent : InsurelySDK.WebMessage {
+  public let name: Swift.String
+  public let value: Any?
+}
+public struct ValidAuthTokenEvent : InsurelySDK.InsurelyEvent {
+  public static let name: Swift.String
+  public let value: Any?
+  public init(_ value: Any?)
+  public static func make(from rawPayload: [Swift.String : Any]) throws -> InsurelySDK.ValidAuthTokenEvent
+}
+public struct SkipPressedEvent : InsurelySDK.InsurelyEvent {
+  public static let name: Swift.String
+  public let value: Any?
+  public init(_ value: Any?)
+  public static func make(from rawPayload: [Swift.String : Any]) throws -> InsurelySDK.SkipPressedEvent
+}
+extension Foundation.HTTPCookie {
+  public var toSetCookieString: Swift.String? {
+    get
+  }
+}
+extension InsurelySDK.InsurelyConfiguration {
+  public struct Customization : Swift.Codable {
+    public var theme: InsurelySDK.InsurelyConfiguration.Theme?
+    public var fonts: InsurelySDK.InsurelyConfiguration.Fonts?
+    public var logosVariant: InsurelySDK.InsurelyConfiguration.LogosVariant?
+    public init(theme: InsurelySDK.InsurelyConfiguration.Theme? = nil, fonts: InsurelySDK.InsurelyConfiguration.Fonts? = nil, logosVariant: InsurelySDK.InsurelyConfiguration.LogosVariant? = nil)
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+}
+public struct InsurelyContext {
+  public let environment: InsurelySDK.InsurelyEnvironment
+  public let bankIDRedirectURL: Swift.String?
+  public init(environment: InsurelySDK.InsurelyEnvironment, bankIDRedirectURL: Swift.String? = nil)
+}
+public struct InsurelyPrefill : Swift.Codable {
+  public var user: InsurelySDK.InsurelyPrefill.User?
+  public var dataAggregation: InsurelySDK.InsurelyPrefill.DataAggregation?
+  public init(user: InsurelySDK.InsurelyPrefill.User? = nil, dataAggregation: InsurelySDK.InsurelyPrefill.DataAggregation? = nil)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct SelectedCompanyEvent : InsurelySDK.InsurelyEvent {
+  public static let name: Swift.String
+  public let company: Swift.String
+  public init(company: Swift.String)
+  public static func make(from rawPayload: [Swift.String : Any]) throws -> InsurelySDK.SelectedCompanyEvent
+}
+public struct InvalidCredentialsEvent : InsurelySDK.InsurelyEvent {
+  public static let name: Swift.String
+  public let value: Any?
+  public init(_ value: Any?)
+  public static func make(from rawPayload: [Swift.String : Any]) throws -> InsurelySDK.InvalidCredentialsEvent
+}
+public struct ResultsEvent : InsurelySDK.InsurelyEvent {
+  public static let name: Swift.String
+  public let value: Any
+  public init(value: Any)
+  public static func make(from rawPayload: [Swift.String : Any]) throws -> InsurelySDK.ResultsEvent
+}
+public struct OnInsurelyEventKey : SwiftUICore.EnvironmentKey {
+  public static let defaultValue: ((any InsurelySDK.InsurelyEvent) -> Swift.Void)?
+  public typealias Value = ((any InsurelySDK.InsurelyEvent) -> Swift.Void)?
+}
+extension SwiftUICore.View {
+  @_Concurrency.MainActor @preconcurrency public func onInsurelyEvent(_ handler: ((any InsurelySDK.InsurelyEvent) -> Swift.Void)?) -> some SwiftUICore.View
+  
+}
+@_Concurrency.MainActor @preconcurrency public struct OnInsurelyEventModifier : SwiftUICore.ViewModifier {
+  @_Concurrency.MainActor @preconcurrency public func body(content: InsurelySDK.OnInsurelyEventModifier.Content) -> some SwiftUICore.View
+  
+  public typealias Body = @_opaqueReturnTypeOf("$s11InsurelySDK02OnA13EventModifierV4body7contentQr7SwiftUI05_ViewE8_ContentVyACG_tF", 0) __
+}
+extension InsurelySDK.InsurelyConfiguration {
+  public enum Language : Swift.Codable {
+    case english
+    case norwegian
+    case swedish
+    case danish
+    case locale(Foundation.Locale)
+    public init(from decoder: any Swift.Decoder) throws
+    public func encode(to encoder: any Swift.Encoder) throws
+  }
+}
+public struct SelectedAuthenticationMethodEvent : InsurelySDK.InsurelyEvent {
+  public static let name: Swift.String
+  public let method: Swift.String
+  public init(method: Swift.String)
+  public static func make(from rawPayload: [Swift.String : Any]) throws -> InsurelySDK.SelectedAuthenticationMethodEvent
+}
+extension InsurelySDK.InsurelyConfiguration {
+  public enum FontWeight : Swift.Int, Swift.Codable {
+    case ultraLight
+    case thin
+    case light
+    case regular
+    case medium
+    case semibold
+    case bold
+    case heavy
+    case black
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+}
+public struct AppCloseEvent : InsurelySDK.InsurelyEvent {
+  public static let name: Swift.String
+  public let value: Any?
+  public init(_ value: Any?)
+  public static func make(from rawPayload: [Swift.String : Any]) throws -> InsurelySDK.AppCloseEvent
+}
+extension InsurelySDK.InsurelyConfiguration {
+  public enum LogosVariant : Swift.String, Swift.Codable {
+    case `default`
+    case debranded
+    case noLogos
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+}
+extension InsurelySDK.InsurelyConfiguration {
+  public enum ThemeMode : Swift.String, Swift.Codable {
+    case light
+    case dark
+    case system
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+}
+extension InsurelySDK.InsurelyLogLevel : Swift.Hashable {}
+extension InsurelySDK.InsurelyLogLevel : Swift.RawRepresentable {}
+extension InsurelySDK.OnInsurelyErrorModifier : Swift.Sendable {}
+extension InsurelySDK.InsurelyView : Swift.Sendable {}
+extension InsurelySDK.InsurelyError : Swift.Equatable {}
+extension InsurelySDK.InsurelyError : Swift.Hashable {}
+extension InsurelySDK.CollectionStatus : Swift.Equatable {}
+extension InsurelySDK.CollectionStatus : Swift.Hashable {}
+extension InsurelySDK.OnInsurelyResultsModifier : Swift.Sendable {}
+extension InsurelySDK.PageView : Swift.Equatable {}
+extension InsurelySDK.PageView : Swift.Hashable {}
+extension InsurelySDK.OnInsurelyEventModifier : Swift.Sendable {}
+extension InsurelySDK.InsurelyConfiguration.FontWeight : Swift.Equatable {}
+extension InsurelySDK.InsurelyConfiguration.FontWeight : Swift.Hashable {}
+extension InsurelySDK.InsurelyConfiguration.FontWeight : Swift.RawRepresentable {}
+extension InsurelySDK.InsurelyConfiguration.LogosVariant : Swift.Equatable {}
+extension InsurelySDK.InsurelyConfiguration.LogosVariant : Swift.Hashable {}
+extension InsurelySDK.InsurelyConfiguration.LogosVariant : Swift.RawRepresentable {}
+extension InsurelySDK.InsurelyConfiguration.ThemeMode : Swift.Equatable {}
+extension InsurelySDK.InsurelyConfiguration.ThemeMode : Swift.Hashable {}
+extension InsurelySDK.InsurelyConfiguration.ThemeMode : Swift.RawRepresentable {}

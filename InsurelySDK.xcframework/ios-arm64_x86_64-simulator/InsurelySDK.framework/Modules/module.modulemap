@@ -1,0 +1,6 @@
+framework module InsurelySDK {
+  umbrella header "InsurelySDK.h"
+  export *
+
+  module * { export * }
+}
