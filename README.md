@@ -10,6 +10,24 @@ The Insurely iOS SDK lets you embed the Insurely user interface in your iOS app.
 
 Access to this repository is granted to authorized Insurely customers. Use of the SDK is governed by the terms of your agreement with Insurely AB. See `LICENSE` for details.
 
+## Access
+
+This SDK is distributed via a private GitHub repository. Anyone who needs to integrate, build against, or resolve the SDK as a Swift Package Manager dependency requires read access to this repository.
+
+### For developers
+
+Send the GitHub usernames of every developer who will integrate the SDK to your Insurely account representative. We will grant each account read access to this repository. Once invited, accept the invitation by email and the SPM dependency will resolve normally when their machine has SSH credentials configured for GitHub.
+
+### For CI/CD systems
+
+CI machines (GitHub Actions, Bitrise, CircleCI, Xcode Cloud, etc.) also need to resolve the package. The recommended pattern is a per-CI **deploy key** — a read-only SSH key tied to the CI infrastructure rather than to any individual developer's account.
+
+1. Generate an SSH keypair on your CI host.
+2. Send the **public** key to your Insurely account representative.
+3. We will install it as a deploy key on this repository.
+
+This keeps personal developer credentials out of CI configuration and gives you clean access control if a CI service ever needs to be rotated or revoked.
+
 ## Installation
 
 Add the SDK to your Xcode project as a Swift Package Manager dependency.
