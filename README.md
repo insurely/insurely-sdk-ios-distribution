@@ -12,21 +12,9 @@ Access to this repository is granted to authorized Insurely customers. Use of th
 
 ## Access
 
-This SDK is distributed via a private GitHub repository. Anyone who needs to integrate, build against, or resolve the SDK as a Swift Package Manager dependency requires read access to this repository.
+This SDK is distributed via a private GitHub repository. Every developer who needs to install or update the SDK requires read access. Send the GitHub usernames of every developer who will integrate the SDK to your Insurely account representative, and we will grant each account read access to this repository.
 
-### For developers
-
-Send the GitHub usernames of every developer who will integrate the SDK to your Insurely account representative. We will grant each account read access to this repository. Once invited, accept the invitation by email and the SPM dependency will resolve normally when their machine has SSH credentials configured for GitHub.
-
-### For CI/CD systems
-
-CI machines (GitHub Actions, Bitrise, CircleCI, Xcode Cloud, etc.) also need to resolve the package. The recommended pattern is a per-CI **deploy key** — a read-only SSH key tied to the CI infrastructure rather than to any individual developer's account.
-
-1. Generate an SSH keypair on your CI host.
-2. Send the **public** key to your Insurely account representative.
-3. We will install it as a deploy key on this repository.
-
-This keeps personal developer credentials out of CI configuration and gives you clean access control if a CI service ever needs to be rotated or revoked.
+How long that access is needed depends on the installation method you choose — see [Installation](#installation) for the specific pattern each method uses.
 
 ## Installation
 
@@ -57,6 +45,16 @@ For projects that use a `Package.swift` manifest:
 
 And add `"InsurelySDK"` as a dependency of the relevant target.
 
+#### CI/CD access
+
+This method requires CI machines to fetch the package from GitHub at build time, so they also need read access to this repository. The recommended pattern is a per-CI **deploy key** — a read-only SSH key tied to the CI infrastructure rather than to any individual developer's account.
+
+1. Generate an SSH keypair on your CI host.
+2. Send the **public** key to your Insurely account representative.
+3. We will install it as a deploy key on this repository.
+
+This keeps personal developer credentials out of CI configuration and gives you clean access control if a CI service is ever rotated or revoked.
+
 ### Swift Package Manager (local clone)
 
 Best when you want to vendor the SDK in your repository for reproducibility, build in air-gapped CI, or pin to a specific commit without going through GitHub at build time.
@@ -70,6 +68,8 @@ Best when you want to vendor the SDK in your repository for reproducibility, bui
 
 Swift Package Manager still handles linking and embedding; the source is just resolved from your local clone instead of GitHub. To update, run `git pull` in the clone (or `git checkout <version-tag>` to pin to an exact version).
 
+No CI deploy key is required — the SDK is vendored in your own repository, so CI never reaches out to ours at build time.
+
 ### Manual framework integration
 
 Best when you do not use Swift Package Manager.
@@ -78,7 +78,7 @@ Best when you do not use Swift Package Manager.
 2. Unzip and drag `InsurelySDK.xcframework` into your Xcode project.
 3. In the target's **General → Frameworks, Libraries, and Embedded Content**, set **Embed & Sign**.
 
-Version tracking and update notifications are entirely manual with this method.
+Version tracking and update notifications are entirely manual with this method. No CI deploy key is required — the binary is committed to your own project.
 
 ## Quickstart
 
