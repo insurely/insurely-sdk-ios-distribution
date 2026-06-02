@@ -30,19 +30,21 @@ This keeps personal developer credentials out of CI configuration and gives you 
 
 ## Installation
 
-Add the SDK to your Xcode project as a Swift Package Manager dependency.
+The SDK can be installed three ways. All produce an identical, signed binary in your app — they differ only in how the framework reaches your project. Pick the one that fits your team's environment.
 
-### Via Xcode
+### Swift Package Manager (remote)
+
+Best when GitHub is reachable at build time and you want Swift Package Manager to manage version updates.
+
+In Xcode:
 
 1. **File → Add Package Dependencies…**
 2. Paste the repository URL:
    ```
    git@github.com:insurely/insurely-sdk-ios-distribution.git
    ```
-3. Set the dependency rule to **Exact Version** and enter the version you want (e.g. `1.2.0`), or **Up to Next Major Version** from `1.2.0` to receive non-breaking updates automatically.
+3. Set the dependency rule to **Exact Version** and enter the version you want, or **Up to Next Major Version** from the same starting version to receive non-breaking updates automatically.
 4. Add the `InsurelySDK` library to your app target's **Frameworks, Libraries, and Embedded Content**, with **Embed & Sign** selected.
-
-### Via `Package.swift`
 
 For projects that use a `Package.swift` manifest:
 
@@ -53,7 +55,30 @@ For projects that use a `Package.swift` manifest:
 )
 ```
 
-And then add `"InsurelySDK"` as a dependency of the relevant target.
+And add `"InsurelySDK"` as a dependency of the relevant target.
+
+### Swift Package Manager (local clone)
+
+Best when you want to vendor the SDK in your repository for reproducibility, build in air-gapped CI, or pin to a specific commit without going through GitHub at build time.
+
+1. Clone this repository to a stable location in or alongside your project:
+   ```
+   git clone git@github.com:insurely/insurely-sdk-ios-distribution.git
+   ```
+2. In Xcode: **File → Add Package Dependencies… → Add Local…**, and select the cloned directory.
+3. Add `InsurelySDK` to your app target's **Frameworks, Libraries, and Embedded Content**, with **Embed & Sign** selected.
+
+Swift Package Manager still handles linking and embedding; the source is just resolved from your local clone instead of GitHub. To update, run `git pull` in the clone (or `git checkout <version-tag>` to pin to an exact version).
+
+### Manual framework integration
+
+Best when you do not use Swift Package Manager.
+
+1. Download `InsurelySDK.xcframework.zip` from the [latest GitHub Release](https://github.com/insurely/insurely-sdk-ios-distribution/releases).
+2. Unzip and drag `InsurelySDK.xcframework` into your Xcode project.
+3. In the target's **General → Frameworks, Libraries, and Embedded Content**, set **Embed & Sign**.
+
+Version tracking and update notifications are entirely manual with this method.
 
 ## Quickstart
 
