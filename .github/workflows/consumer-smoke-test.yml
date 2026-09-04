@@ -1,0 +1,94 @@
+# Proves the published Swift package works for a customer.
+#
+# Nothing else checks that. This repository holds a committed xcframework and a
+# Package.swift, and neither is exercised until someone integrates them -- so
+# the first person to find a broken tag would otherwise be a customer.
+#
+# So this builds a throwaway package that depends on this repository by its Git
+# URL at a released tag, exactly as the README tells customers to, and compiles
+# a view mirroring the README's quickstart. If the tag does not resolve, if the
+# xcframework has no slice for the destination, or if the public API drifts
+# from the documented usage, this fails.
+#
+# It runs on releases rather than on a schedule: a tag is immutable, so a
+# version that passes once passes forever.
+#
+# To run it by hand:
+#
+#   cp -r .github/consumer-smoke-test /tmp/c
+#   sed -i '' 's/__VERSION__/1.2.3/' /tmp/c/Package.swift
+#   (cd /tmp/c && xcodebuild -scheme ConsumerSmokeTest \
+#      -destination 'generic/platform=iOS Simulator' build)
+name: Consumer smoke test
+
+on:
+  release:
+    types: [published]
+  pull_request:
+    paths:
+      - '.github/consumer-smoke-test/**'
+      - '.github/workflows/consumer-smoke-test.yml'
+      - 'Package.swift'
+      - 'InsurelySDK.xcframework/**'
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Tag to test. Defaults to the latest release.'
+        type: string
+        required: false
+
+permissions:
+  contents: read
+
+jobs:
+  consume:
+    name: Build a consumer package against the released tag
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Resolve the tag to test
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          VERSION="${{ inputs.version }}"
+          if [ -z "$VERSION" ] && [ "${{ github.event_name }}" = "release" ]; then
+            VERSION="${{ github.event.release.tag_name }}"
+          fi
+          if [ -z "$VERSION" ]; then
+            VERSION="$(gh release view --json tagName --jq .tagName)"
+          fi
+          if [ -z "$VERSION" ]; then
+            echo "::error::Could not determine a tag to test."
+            exit 1
+          fi
+          echo "version=$VERSION" >> "$GITHUB_ENV"
+          echo "Testing insurely-sdk-ios-distribution at $VERSION"
+
+      - name: Prepare the consumer package
+        run: |
+          mkdir -p "$RUNNER_TEMP/consumer"
+          cp -r .github/consumer-smoke-test/. "$RUNNER_TEMP/consumer/"
+          sed -i '' "s/__VERSION__/${{ env.version }}/" "$RUNNER_TEMP/consumer/Package.swift"
+
+      - name: Resolve and compile against the published package
+        # A simulator destination, not macOS: the xcframework ships ios-arm64
+        # and ios-arm64_x86_64-simulator slices only, so a macOS build would
+        # fail on a missing slice rather than on anything meaningful.
+        working-directory: ${{ runner.temp }}/consumer
+        run: |
+          xcodebuild \
+            -scheme ConsumerSmokeTest \
+            -destination 'generic/platform=iOS Simulator' \
+            -skipMacroValidation \
+            build
+
+      - name: Summary
+        if: always()
+        run: |
+          {
+            echo "## insurely-sdk-ios-distribution @ ${{ env.version }}"
+            echo
+            echo "Resolved by Swift Package Manager from this repository's Git URL and"
+            echo "compiled against the README's quickstart — the same path a customer takes."
+          } >> "$GITHUB_STEP_SUMMARY"
