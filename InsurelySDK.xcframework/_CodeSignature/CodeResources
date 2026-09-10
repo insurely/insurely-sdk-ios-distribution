@@ -10,11 +10,11 @@
 		</data>
 		<key>ios-arm64/InsurelySDK.framework/Info.plist</key>
 		<data>
-		Eoa2pkrIlpae2c5tN8jOQWaDgYE=
+		8Jm+RzLh1CpiUYInb01Y3hD6cRA=
 		</data>
 		<key>ios-arm64/InsurelySDK.framework/InsurelySDK</key>
 		<data>
-		2I5xz3ToXVaWog2Jm5oRuqBckKc=
+		2ZW+f5XvhCJBadbcbm3eyILf7Nc=
 		</data>
 		<key>ios-arm64/InsurelySDK.framework/Modules/InsurelySDK.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
@@ -22,15 +22,15 @@
 		</data>
 		<key>ios-arm64/InsurelySDK.framework/Modules/InsurelySDK.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		EvFyUvPqYBAiqc04pjI3REvhe4w=
+		H1pPwVnCc+3YDYvlMxJLQzUTTjw=
 		</data>
 		<key>ios-arm64/InsurelySDK.framework/Modules/InsurelySDK.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		bt1+88lmY9xz2HVykng2IBtxjx0=
+		imKabWRxXj1lQuDIr4vNHdZZdIw=
 		</data>
 		<key>ios-arm64/InsurelySDK.framework/Modules/InsurelySDK.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		EvFyUvPqYBAiqc04pjI3REvhe4w=
+		H1pPwVnCc+3YDYvlMxJLQzUTTjw=
 		</data>
 		<key>ios-arm64/InsurelySDK.framework/Modules/module.modulemap</key>
 		<data>
@@ -42,7 +42,7 @@
 		</data>
 		<key>ios-arm64/InsurelySDK.framework/_CodeSignature/CodeResources</key>
 		<data>
-		3jcq4giKH0/BmpKOxr+f0CrHoWw=
+		ggXcP9InAl8csZsp7YpRl4MKC4M=
 		</data>
 		<key>ios-arm64_x86_64-simulator/InsurelySDK.framework/Headers/InsurelySDK.h</key>
 		<data>
@@ -50,11 +50,11 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/InsurelySDK.framework/Info.plist</key>
 		<data>
-		KCeo5ZIzQgD1VCNNJlovBJJBQOk=
+		u2ZZfmigG+6h41UCdU9MclVHa0U=
 		</data>
 		<key>ios-arm64_x86_64-simulator/InsurelySDK.framework/InsurelySDK</key>
 		<data>
-		CvExBCl/kb1dFCQKPVhOFkaYUhA=
+		ZbhE9QCv+//lHpq62KYsF5zfBRk=
 		</data>
 		<key>ios-arm64_x86_64-simulator/InsurelySDK.framework/Modules/InsurelySDK.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -62,15 +62,15 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/InsurelySDK.framework/Modules/InsurelySDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		1S9TwXWSl8kLncXjUXj9BBo59Wk=
+		bSOlApqYWd6h3vMiu3oFSH1MNYQ=
 		</data>
 		<key>ios-arm64_x86_64-simulator/InsurelySDK.framework/Modules/InsurelySDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		NrCk/vnel0n6cD5T339HaL/ENY8=
+		BRHuoue74AgntrhPkOXXg5ubvm4=
 		</data>
 		<key>ios-arm64_x86_64-simulator/InsurelySDK.framework/Modules/InsurelySDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		1S9TwXWSl8kLncXjUXj9BBo59Wk=
+		bSOlApqYWd6h3vMiu3oFSH1MNYQ=
 		</data>
 		<key>ios-arm64_x86_64-simulator/InsurelySDK.framework/Modules/InsurelySDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -78,15 +78,15 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/InsurelySDK.framework/Modules/InsurelySDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		Z5DoLpXZRs649F9q8QiLCFNtRcQ=
+		dFvROA03TUONRqZ9Y35d1ThaQYg=
 		</data>
 		<key>ios-arm64_x86_64-simulator/InsurelySDK.framework/Modules/InsurelySDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		SxxeBrl3nuU8yAPmTmaQW2iBZeA=
+		SVsgxZYb33IgNiY8guLGyJc1Il8=
 		</data>
 		<key>ios-arm64_x86_64-simulator/InsurelySDK.framework/Modules/InsurelySDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		Z5DoLpXZRs649F9q8QiLCFNtRcQ=
+		dFvROA03TUONRqZ9Y35d1ThaQYg=
 		</data>
 		<key>ios-arm64_x86_64-simulator/InsurelySDK.framework/Modules/module.modulemap</key>
 		<data>
@@ -98,7 +98,7 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/InsurelySDK.framework/_CodeSignature/CodeResources</key>
 		<data>
-		Q/Q6r4zhGGlpNuCWNTfgbQStPzs=
+		NWmwiZmUaAQ6ADSeQXqkUWV9LAQ=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -114,14 +114,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			gExQb2+971AWJfXzJN7FnxE+3J4hBsnv9pwJXQzvAMg=
+			kqRAFfs8qwPpoQ073DS5Ugj3Ex+ZeMmpCDzH7jRO4Ag=
 			</data>
 		</dict>
 		<key>ios-arm64/InsurelySDK.framework/InsurelySDK</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			rdtaq3xuUnvMZxpkFSopR68Kne2IjEOQHXMubLTb5zg=
+			Cjo/fMW+eC4kMhe2qxsgmPm3jq7w5VKxwnB1aahtQ5E=
 			</data>
 		</dict>
 		<key>ios-arm64/InsurelySDK.framework/Modules/InsurelySDK.swiftmodule/arm64-apple-ios.abi.json</key>
@@ -135,21 +135,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			wE0QlJ/POKDIl+sjyRZ2hvAkpWFNZ9qQIsuaqKPGNQA=
+			aHp34uwJPOhSMdcE1DJdPqE3ybuf00fLjgKaysSZF6c=
 			</data>
 		</dict>
 		<key>ios-arm64/InsurelySDK.framework/Modules/InsurelySDK.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			EhR8o8i0r3V5/GfUSoLD/fWJKzgO0MtkakauMpcApGc=
+			gw8rYGhTlFO7sXXJYOfRyRJ32nx8J6gE2Jw26YCIzP0=
 			</data>
 		</dict>
 		<key>ios-arm64/InsurelySDK.framework/Modules/InsurelySDK.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			wE0QlJ/POKDIl+sjyRZ2hvAkpWFNZ9qQIsuaqKPGNQA=
+			aHp34uwJPOhSMdcE1DJdPqE3ybuf00fLjgKaysSZF6c=
 			</data>
 		</dict>
 		<key>ios-arm64/InsurelySDK.framework/Modules/module.modulemap</key>
@@ -170,7 +170,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			lSFFRLhk66Ds2kFco5CT2HnFAuVAxaMWcbUHlIwoHQ8=
+			ywJQwhXOnWyGt2UU988yocglt9dtqzZyL1qSwCoq6sk=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/InsurelySDK.framework/Headers/InsurelySDK.h</key>
@@ -184,14 +184,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			I9WBWQ0dR/norfyPHugIg+o82uWyjHpOjMwyps14X/A=
+			0pOostUcuiXwMpOCdghdgoJW32i2Kei6bEKBdHh7pqg=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/InsurelySDK.framework/InsurelySDK</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			734sH1oCxrfOcMSyzwfqwcllgu17hPrwHPh37EDoErM=
+			kuITeSuyCmaO2fG39F7zX62wsVtSmuO3R5z9KoaIEd8=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/InsurelySDK.framework/Modules/InsurelySDK.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
@@ -205,21 +205,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			OLFTe8iuXjR8RyUfkh83gt8KK0+c5+ChWsasmmijJxg=
+			w/HCLQL7g/Xf2iP5f9tTrrXswslhvAaZPtjcgx96vJE=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/InsurelySDK.framework/Modules/InsurelySDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			DjzgX98jfZpDaDtvSFtUv++gXdMUAsYdNqLUuSdIPtE=
+			YdT6K+GM6QWTBHwOD2+Wanr9FUhDyqVH5SQymkjjB/c=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/InsurelySDK.framework/Modules/InsurelySDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			OLFTe8iuXjR8RyUfkh83gt8KK0+c5+ChWsasmmijJxg=
+			w/HCLQL7g/Xf2iP5f9tTrrXswslhvAaZPtjcgx96vJE=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/InsurelySDK.framework/Modules/InsurelySDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
@@ -233,21 +233,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			4ePSLV8vJm79HKrjZsAEWkP7z3XSWECOn+DkyV308lI=
+			yG+WSv/AIDbDaaT2lpevTsPaltCSAtBVs8xPH1tjrYo=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/InsurelySDK.framework/Modules/InsurelySDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			v8R2s3H9lCSSaOozZBqLbO1To4RnMXzXHJp1/MGnaeA=
+			jkdwvq0QI9cE5aw1g3XdTZzGv9mlBtaXn2A7bPGWApE=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/InsurelySDK.framework/Modules/InsurelySDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			4ePSLV8vJm79HKrjZsAEWkP7z3XSWECOn+DkyV308lI=
+			yG+WSv/AIDbDaaT2lpevTsPaltCSAtBVs8xPH1tjrYo=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/InsurelySDK.framework/Modules/module.modulemap</key>
@@ -268,7 +268,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			F027uggCKivDcip38eEuWsAAlEwg53oizZNC5cA9mC0=
+			zc017xtF08fPDjZC7pKy8rgDr86iH87aOrCwT6hzXDE=
 			</data>
 		</dict>
 	</dict>
