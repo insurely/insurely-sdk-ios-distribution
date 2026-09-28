@@ -2457,9 +2457,120 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "authToken",
+            "printedName": "authToken",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:11InsurelySDK0A13ConfigurationV9authTokenSSSgvp",
+            "mangledName": "$s11InsurelySDK0A13ConfigurationV9authTokenSSSgvp",
+            "moduleName": "InsurelySDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11InsurelySDK0A13ConfigurationV9authTokenSSSgvg",
+                "mangledName": "$s11InsurelySDK0A13ConfigurationV9authTokenSSSgvg",
+                "moduleName": "InsurelySDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11InsurelySDK0A13ConfigurationV9authTokenSSSgvs",
+                "mangledName": "$s11InsurelySDK0A13ConfigurationV9authTokenSSSgvs",
+                "moduleName": "InsurelySDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:11InsurelySDK0A13ConfigurationV9authTokenSSSgvM",
+                "mangledName": "$s11InsurelySDK0A13ConfigurationV9authTokenSSSgvM",
+                "moduleName": "InsurelySDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(customerId:configName:agent:showCloseButton:showBackButton:language:customization:themeMode:dataAggregation:)",
+            "printedName": "init(customerId:configName:agent:showCloseButton:showBackButton:language:customization:themeMode:dataAggregation:authToken:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -2575,11 +2686,26 @@
                 ],
                 "hasDefaultArg": true,
                 "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:11InsurelySDK0A13ConfigurationV10customerId10configName5agent15showCloseButton0i4BackK08language13customization9themeMode15dataAggregationACSS_SSAC5AgentVSbSgAoC8LanguageOSgAC13CustomizationVSgAC05ThemeP0OSgAC04DataR0VSgtcfc",
-            "mangledName": "$s11InsurelySDK0A13ConfigurationV10customerId10configName5agent15showCloseButton0i4BackK08language13customization9themeMode15dataAggregationACSS_SSAC5AgentVSbSgAoC8LanguageOSgAC13CustomizationVSgAC05ThemeP0OSgAC04DataR0VSgtcfc",
+            "usr": "s:11InsurelySDK0A13ConfigurationV10customerId10configName5agent15showCloseButton0i4BackK08language13customization9themeMode15dataAggregation9authTokenACSS_SSAC5AgentVSbSgApC8LanguageOSgAC13CustomizationVSgAC05ThemeP0OSgAC04DataR0VSgSSSgtcfc",
+            "mangledName": "$s11InsurelySDK0A13ConfigurationV10customerId10configName5agent15showCloseButton0i4BackK08language13customization9themeMode15dataAggregation9authTokenACSS_SSAC5AgentVSbSgApC8LanguageOSgAC13CustomizationVSgAC05ThemeP0OSgAC04DataR0VSgSSSgtcfc",
             "moduleName": "InsurelySDK",
             "declAttributes": [
               "AccessControl",
@@ -2590,7 +2716,7 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(resumeCode:agent:showCloseButton:showBackButton:language:customization:themeMode:dataAggregation:)",
+            "printedName": "init(resumeCode:agent:showCloseButton:showBackButton:language:customization:themeMode:dataAggregation:authToken:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -2700,11 +2826,26 @@
                 ],
                 "hasDefaultArg": true,
                 "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:11InsurelySDK0A13ConfigurationV10resumeCode5agent15showCloseButton0g4BackI08language13customization9themeMode15dataAggregationACSS_AC5AgentVSbSgAnC8LanguageOSgAC13CustomizationVSgAC05ThemeN0OSgAC04DataP0VSgtcfc",
-            "mangledName": "$s11InsurelySDK0A13ConfigurationV10resumeCode5agent15showCloseButton0g4BackI08language13customization9themeMode15dataAggregationACSS_AC5AgentVSbSgAnC8LanguageOSgAC13CustomizationVSgAC05ThemeN0OSgAC04DataP0VSgtcfc",
+            "usr": "s:11InsurelySDK0A13ConfigurationV10resumeCode5agent15showCloseButton0g4BackI08language13customization9themeMode15dataAggregation9authTokenACSS_AC5AgentVSbSgAoC8LanguageOSgAC13CustomizationVSgAC05ThemeN0OSgAC04DataP0VSgSSSgtcfc",
+            "mangledName": "$s11InsurelySDK0A13ConfigurationV10resumeCode5agent15showCloseButton0g4BackI08language13customization9themeMode15dataAggregation9authTokenACSS_AC5AgentVSbSgAoC8LanguageOSgAC13CustomizationVSgAC05ThemeN0OSgAC04DataP0VSgSSSgtcfc",
             "moduleName": "InsurelySDK",
             "declAttributes": [
               "AccessControl"
@@ -2714,7 +2855,7 @@
           {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(agent:showCloseButton:showBackButton:language:customization:themeMode:dataAggregation:)",
+            "printedName": "init(agent:showCloseButton:showBackButton:language:customization:themeMode:dataAggregation:authToken:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -2818,11 +2959,26 @@
                 ],
                 "hasDefaultArg": true,
                 "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:11InsurelySDK0A13ConfigurationV5agent15showCloseButton0e4BackG08language13customization9themeMode15dataAggregationA2C5AgentV_SbSgAmC8LanguageOSgAC13CustomizationVSgAC05ThemeL0OSgAC04DataN0VSgtcfc",
-            "mangledName": "$s11InsurelySDK0A13ConfigurationV5agent15showCloseButton0e4BackG08language13customization9themeMode15dataAggregationA2C5AgentV_SbSgAmC8LanguageOSgAC13CustomizationVSgAC05ThemeL0OSgAC04DataN0VSgtcfc",
+            "usr": "s:11InsurelySDK0A13ConfigurationV5agent15showCloseButton0e4BackG08language13customization9themeMode15dataAggregation9authTokenA2C5AgentV_SbSgAnC8LanguageOSgAC13CustomizationVSgAC05ThemeL0OSgAC04DataN0VSgSSSgtcfc",
+            "mangledName": "$s11InsurelySDK0A13ConfigurationV5agent15showCloseButton0e4BackG08language13customization9themeMode15dataAggregation9authTokenA2C5AgentV_SbSgAnC8LanguageOSgAC13CustomizationVSgAC05ThemeL0OSgAC04DataN0VSgSSSgtcfc",
             "moduleName": "InsurelySDK",
             "declAttributes": [
               "AccessControl",
@@ -20086,427 +20242,455 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/Users\/sammikliv\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Logging\/InsurelyLogLevel.swift",
+      "filePath": "\/Users\/saraandersson\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Logging\/InsurelyLogLevel.swift",
       "kind": "IntegerLiteral",
       "offset": 147,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/sammikliv\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Logging\/InsurelyLogLevel.swift",
+      "filePath": "\/Users\/saraandersson\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Logging\/InsurelyLogLevel.swift",
       "kind": "IntegerLiteral",
       "offset": 166,
       "length": 1,
       "value": "1"
     },
     {
-      "filePath": "\/Users\/sammikliv\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Logging\/InsurelyLogLevel.swift",
+      "filePath": "\/Users\/saraandersson\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Logging\/InsurelyLogLevel.swift",
       "kind": "IntegerLiteral",
       "offset": 183,
       "length": 1,
       "value": "2"
     },
     {
-      "filePath": "\/Users\/sammikliv\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Prepopulation\/Configuration\/InsurelyConfiguration+Agent.swift",
+      "filePath": "\/Users\/saraandersson\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Prepopulation\/Configuration\/InsurelyConfiguration+Agent.swift",
       "kind": "StringLiteral",
       "offset": 453,
       "length": 5,
       "value": "\"sdk\""
     },
     {
-      "filePath": "\/Users\/sammikliv\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Logging\/Logger+Instruction.swift",
+      "filePath": "\/Users\/saraandersson\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Logging\/Logger+Instruction.swift",
       "kind": "StringLiteral",
       "offset": 161,
       "length": 18,
       "value": "\"com.insurely.sdk\""
     },
     {
-      "filePath": "\/Users\/sammikliv\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Logging\/Logger+Instruction.swift",
+      "filePath": "\/Users\/saraandersson\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Logging\/Logger+Instruction.swift",
       "kind": "StringLiteral",
       "offset": 191,
       "length": 13,
       "value": "\"Instruction\""
     },
     {
-      "filePath": "\/Users\/sammikliv\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Logging\/Logger+Instruction.swift",
+      "filePath": "\/Users\/saraandersson\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Logging\/Logger+Instruction.swift",
       "kind": "StringLiteral",
       "offset": 260,
       "length": 22,
       "value": "\"com.insurely.verbose\""
     },
     {
-      "filePath": "\/Users\/sammikliv\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Logging\/Logger+Instruction.swift",
+      "filePath": "\/Users\/saraandersson\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Logging\/Logger+Instruction.swift",
       "kind": "StringLiteral",
       "offset": 294,
       "length": 13,
       "value": "\"Instruction\""
     },
     {
-      "filePath": "\/Users\/sammikliv\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Web Message Bridge\/Messages\/InvalidAuthTokenEvent.swift",
+      "filePath": "\/Users\/saraandersson\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Web Message Bridge\/Messages\/InvalidAuthTokenEvent.swift",
       "kind": "StringLiteral",
       "offset": 201,
       "length": 20,
       "value": "\"INVALID_AUTH_TOKEN\""
     },
     {
-      "filePath": "\/Users\/sammikliv\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Logging\/Logger+WebModel.swift",
+      "filePath": "\/Users\/saraandersson\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Logging\/Logger+WebModel.swift",
       "kind": "StringLiteral",
       "offset": 158,
       "length": 18,
       "value": "\"com.insurely.sdk\""
     },
     {
-      "filePath": "\/Users\/sammikliv\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Logging\/Logger+WebModel.swift",
+      "filePath": "\/Users\/saraandersson\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Logging\/Logger+WebModel.swift",
       "kind": "StringLiteral",
       "offset": 188,
       "length": 10,
       "value": "\"WebModel\""
     },
     {
-      "filePath": "\/Users\/sammikliv\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Logging\/Logger+WebModel.swift",
+      "filePath": "\/Users\/saraandersson\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Logging\/Logger+WebModel.swift",
       "kind": "StringLiteral",
       "offset": 251,
       "length": 22,
       "value": "\"com.insurely.verbose\""
     },
     {
-      "filePath": "\/Users\/sammikliv\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Logging\/Logger+WebModel.swift",
+      "filePath": "\/Users\/saraandersson\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Logging\/Logger+WebModel.swift",
       "kind": "StringLiteral",
       "offset": 285,
       "length": 10,
       "value": "\"WebModel\""
     },
     {
-      "filePath": "\/Users\/sammikliv\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Logging\/Logger+Bootstrap.swift",
+      "filePath": "\/Users\/saraandersson\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Logging\/Logger+Bootstrap.swift",
       "kind": "StringLiteral",
       "offset": 159,
       "length": 18,
       "value": "\"com.insurely.sdk\""
     },
     {
-      "filePath": "\/Users\/sammikliv\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Logging\/Logger+Bootstrap.swift",
+      "filePath": "\/Users\/saraandersson\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Logging\/Logger+Bootstrap.swift",
       "kind": "StringLiteral",
       "offset": 189,
       "length": 11,
       "value": "\"Bootstrap\""
     },
     {
-      "filePath": "\/Users\/sammikliv\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Web Message Bridge\/Messages\/AuthTokenExpiringSoonEvent.swift",
+      "filePath": "\/Users\/saraandersson\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Web Message Bridge\/Messages\/AuthTokenExpiringSoonEvent.swift",
       "kind": "StringLiteral",
       "offset": 220,
       "length": 26,
       "value": "\"AUTH_TOKEN_EXPIRING_SOON\""
     },
     {
-      "filePath": "\/Users\/sammikliv\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Web Message Bridge\/Messages\/CollectionIDEvent.swift",
+      "filePath": "\/Users\/saraandersson\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Web Message Bridge\/Messages\/CollectionIDEvent.swift",
       "kind": "StringLiteral",
       "offset": 229,
       "length": 15,
       "value": "\"COLLECTION_ID\""
     },
     {
-      "filePath": "\/Users\/sammikliv\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/InsurelyEnvironment.swift",
+      "filePath": "\/Users\/saraandersson\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/InsurelyEnvironment.swift",
       "kind": "StringLiteral",
       "offset": 401,
       "length": 29,
       "value": "\"https:\/\/blocks.insurely.com\""
     },
     {
-      "filePath": "\/Users\/sammikliv\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/InsurelyEnvironment.swift",
+      "filePath": "\/Users\/saraandersson\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/InsurelyEnvironment.swift",
       "kind": "StringLiteral",
       "offset": 621,
       "length": 37,
       "value": "\"https:\/\/blocks.staging.insurely.com\""
     },
     {
-      "filePath": "\/Users\/sammikliv\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/InsurelyEnvironment.swift",
+      "filePath": "\/Users\/saraandersson\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/InsurelyEnvironment.swift",
       "kind": "StringLiteral",
       "offset": 900,
       "length": 14,
       "value": "\"API_BASE_URL\""
     },
     {
-      "filePath": "\/Users\/sammikliv\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/InsurelyEnvironment.swift",
+      "filePath": "\/Users\/saraandersson\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/InsurelyEnvironment.swift",
       "kind": "StringLiteral",
       "offset": 919,
       "length": 34,
       "value": "\"https:\/\/blocks.test.insurely.com\""
     },
     {
-      "filePath": "\/Users\/sammikliv\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Web Message Bridge\/Messages\/CollectionInitiatedEvent.swift",
+      "filePath": "\/Users\/saraandersson\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Web Message Bridge\/Messages\/CollectionInitiatedEvent.swift",
       "kind": "StringLiteral",
       "offset": 239,
       "length": 22,
       "value": "\"COLLECTION_INITIATED\""
     },
     {
-      "filePath": "\/Users\/sammikliv\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Web Message Bridge\/Messages\/WaitingForInitializationEvent.swift",
+      "filePath": "\/Users\/saraandersson\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Web Message Bridge\/Messages\/WaitingForInitializationEvent.swift",
       "kind": "StringLiteral",
       "offset": 240,
       "length": 28,
       "value": "\"WAITING_FOR_INITIALIZATION\""
     },
     {
-      "filePath": "\/Users\/sammikliv\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Web Message Bridge\/Messages\/ReturnToBrowserEvent.swift",
+      "filePath": "\/Users\/saraandersson\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Web Message Bridge\/Messages\/ReturnToBrowserEvent.swift",
       "kind": "StringLiteral",
       "offset": 240,
       "length": 19,
       "value": "\"RETURN_TO_BROWSER\""
     },
     {
-      "filePath": "\/Users\/sammikliv\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Web Message Bridge\/Messages\/InitializeAppEvent.swift",
+      "filePath": "\/Users\/saraandersson\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Web Message Bridge\/Messages\/InitializeAppEvent.swift",
       "kind": "StringLiteral",
       "offset": 214,
       "length": 16,
       "value": "\"INITIALIZE_APP\""
     },
     {
-      "filePath": "\/Users\/sammikliv\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Web Message Bridge\/Messages\/CollectionStatusEvent.swift",
+      "filePath": "\/Users\/saraandersson\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Web Message Bridge\/Messages\/CollectionStatusEvent.swift",
       "kind": "StringLiteral",
       "offset": 651,
       "length": 19,
       "value": "\"COLLECTION_STATUS\""
     },
     {
-      "filePath": "\/Users\/sammikliv\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Web Message Bridge\/Messages\/OpenSwedishBankIDEvent.swift",
+      "filePath": "\/Users\/saraandersson\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Web Message Bridge\/Messages\/OpenSwedishBankIDEvent.swift",
       "kind": "StringLiteral",
       "offset": 220,
       "length": 21,
       "value": "\"OPEN_SWEDISH_BANKID\""
     },
     {
-      "filePath": "\/Users\/sammikliv\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/JSON Decoder\/Internal\/InternalDecoder.swift",
+      "filePath": "\/Users\/saraandersson\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/JSON Decoder\/Internal\/InternalDecoder.swift",
       "kind": "Dictionary",
       "offset": 304,
       "length": 3,
       "value": "[]"
     },
     {
-      "filePath": "\/Users\/sammikliv\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Web Message Bridge\/Messages\/ResetHashEvent.swift",
+      "filePath": "\/Users\/saraandersson\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Web Message Bridge\/Messages\/ResetHashEvent.swift",
       "kind": "StringLiteral",
       "offset": 158,
       "length": 12,
       "value": "\"RESET_HASH\""
     },
     {
-      "filePath": "\/Users\/sammikliv\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Web Message Bridge\/Messages\/AppLoadedEvent.swift",
+      "filePath": "\/Users\/saraandersson\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Web Message Bridge\/Messages\/AppLoadedEvent.swift",
       "kind": "StringLiteral",
       "offset": 209,
       "length": 12,
       "value": "\"APP_LOADED\""
     },
     {
-      "filePath": "\/Users\/sammikliv\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Web Message Bridge\/Messages\/PageViewEvent.swift",
+      "filePath": "\/Users\/saraandersson\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Web Message Bridge\/Messages\/PageViewEvent.swift",
       "kind": "StringLiteral",
       "offset": 1119,
       "length": 11,
       "value": "\"PAGE_VIEW\""
     },
     {
-      "filePath": "\/Users\/sammikliv\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Web Message Bridge\/WebMessage.swift",
+      "filePath": "\/Users\/saraandersson\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Web Message Bridge\/WebMessage.swift",
       "kind": "StringLiteral",
       "offset": 945,
       "length": 14,
       "value": "\"ACCESS_TOKEN\""
     },
     {
-      "filePath": "\/Users\/sammikliv\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Web Message Bridge\/WebMessage.swift",
+      "filePath": "\/Users\/saraandersson\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Web Message Bridge\/WebMessage.swift",
       "kind": "StringLiteral",
       "offset": 987,
       "length": 17,
       "value": "\"INSTRUCTIONS_V2\""
     },
     {
-      "filePath": "\/Users\/sammikliv\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Web Message Bridge\/Messages\/ValidAuthTokenEvent.swift",
+      "filePath": "\/Users\/saraandersson\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Web Message Bridge\/Messages\/ValidAuthTokenEvent.swift",
       "kind": "StringLiteral",
       "offset": 206,
       "length": 18,
       "value": "\"VALID_AUTH_TOKEN\""
     },
     {
-      "filePath": "\/Users\/sammikliv\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Web Message Bridge\/Messages\/SkipPressedEvent.swift",
+      "filePath": "\/Users\/saraandersson\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Web Message Bridge\/Messages\/SkipPressedEvent.swift",
       "kind": "StringLiteral",
       "offset": 197,
       "length": 14,
       "value": "\"SKIP_PRESSED\""
     },
     {
-      "filePath": "\/Users\/sammikliv\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Web Message Bridge\/Messages\/SelectedCompanyEvent.swift",
+      "filePath": "\/Users\/saraandersson\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Web Message Bridge\/WebBridge.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1897,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/saraandersson\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Web Message Bridge\/WebBridge.swift",
+      "kind": "StringLiteral",
+      "offset": 2002,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/saraandersson\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Web Message Bridge\/Messages\/SelectedCompanyEvent.swift",
       "kind": "StringLiteral",
       "offset": 227,
       "length": 18,
       "value": "\"SELECTED_COMPANY\""
     },
     {
-      "filePath": "\/Users\/sammikliv\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Web Message Bridge\/Messages\/InvalidCredentialsEvent.swift",
+      "filePath": "\/Users\/saraandersson\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Web Message Bridge\/Messages\/InvalidCredentialsEvent.swift",
       "kind": "StringLiteral",
       "offset": 206,
       "length": 21,
       "value": "\"INVALID_CREDENTIALS\""
     },
     {
-      "filePath": "\/Users\/sammikliv\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Web Message Bridge\/Messages\/ResultsEvent.swift",
+      "filePath": "\/Users\/saraandersson\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Web Message Bridge\/Messages\/ResultsEvent.swift",
       "kind": "StringLiteral",
       "offset": 269,
       "length": 9,
       "value": "\"RESULTS\""
     },
     {
-      "filePath": "\/Users\/sammikliv\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Web Message Bridge\/Messages\/SelectedAuthenticationMethodEvent.swift",
+      "filePath": "\/Users\/saraandersson\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Web Message Bridge\/Messages\/SelectedAuthenticationMethodEvent.swift",
       "kind": "StringLiteral",
       "offset": 233,
       "length": 32,
       "value": "\"SELECTED_AUTHENTICATION_METHOD\""
     },
     {
-      "filePath": "\/Users\/sammikliv\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Prepopulation\/Configuration\/InsurelyConfiguration+FontWeight.swift",
+      "filePath": "\/Users\/saraandersson\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Prepopulation\/Configuration\/InsurelyConfiguration+FontWeight.swift",
       "kind": "IntegerLiteral",
       "offset": 242,
       "length": 3,
       "value": "100"
     },
     {
-      "filePath": "\/Users\/sammikliv\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Prepopulation\/Configuration\/InsurelyConfiguration+FontWeight.swift",
+      "filePath": "\/Users\/saraandersson\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Prepopulation\/Configuration\/InsurelyConfiguration+FontWeight.swift",
       "kind": "IntegerLiteral",
       "offset": 295,
       "length": 3,
       "value": "200"
     },
     {
-      "filePath": "\/Users\/sammikliv\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Prepopulation\/Configuration\/InsurelyConfiguration+FontWeight.swift",
+      "filePath": "\/Users\/saraandersson\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Prepopulation\/Configuration\/InsurelyConfiguration+FontWeight.swift",
       "kind": "IntegerLiteral",
       "offset": 349,
       "length": 3,
       "value": "300"
     },
     {
-      "filePath": "\/Users\/sammikliv\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Prepopulation\/Configuration\/InsurelyConfiguration+FontWeight.swift",
+      "filePath": "\/Users\/saraandersson\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Prepopulation\/Configuration\/InsurelyConfiguration+FontWeight.swift",
       "kind": "IntegerLiteral",
       "offset": 405,
       "length": 3,
       "value": "400"
     },
     {
-      "filePath": "\/Users\/sammikliv\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Prepopulation\/Configuration\/InsurelyConfiguration+FontWeight.swift",
+      "filePath": "\/Users\/saraandersson\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Prepopulation\/Configuration\/InsurelyConfiguration+FontWeight.swift",
       "kind": "IntegerLiteral",
       "offset": 460,
       "length": 3,
       "value": "500"
     },
     {
-      "filePath": "\/Users\/sammikliv\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Prepopulation\/Configuration\/InsurelyConfiguration+FontWeight.swift",
+      "filePath": "\/Users\/saraandersson\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Prepopulation\/Configuration\/InsurelyConfiguration+FontWeight.swift",
       "kind": "IntegerLiteral",
       "offset": 517,
       "length": 3,
       "value": "600"
     },
     {
-      "filePath": "\/Users\/sammikliv\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Prepopulation\/Configuration\/InsurelyConfiguration+FontWeight.swift",
+      "filePath": "\/Users\/saraandersson\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Prepopulation\/Configuration\/InsurelyConfiguration+FontWeight.swift",
       "kind": "IntegerLiteral",
       "offset": 570,
       "length": 3,
       "value": "700"
     },
     {
-      "filePath": "\/Users\/sammikliv\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Prepopulation\/Configuration\/InsurelyConfiguration+FontWeight.swift",
+      "filePath": "\/Users\/saraandersson\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Prepopulation\/Configuration\/InsurelyConfiguration+FontWeight.swift",
       "kind": "IntegerLiteral",
       "offset": 624,
       "length": 3,
       "value": "800"
     },
     {
-      "filePath": "\/Users\/sammikliv\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Prepopulation\/Configuration\/InsurelyConfiguration+FontWeight.swift",
+      "filePath": "\/Users\/saraandersson\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Prepopulation\/Configuration\/InsurelyConfiguration+FontWeight.swift",
       "kind": "IntegerLiteral",
       "offset": 678,
       "length": 3,
       "value": "900"
     },
     {
-      "filePath": "\/Users\/sammikliv\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Logging\/Logger+WebView.swift",
+      "filePath": "\/Users\/saraandersson\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Logging\/Logger+WebView.swift",
       "kind": "StringLiteral",
       "offset": 157,
       "length": 18,
       "value": "\"com.insurely.sdk\""
     },
     {
-      "filePath": "\/Users\/sammikliv\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Logging\/Logger+WebView.swift",
+      "filePath": "\/Users\/saraandersson\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Logging\/Logger+WebView.swift",
       "kind": "StringLiteral",
       "offset": 187,
       "length": 9,
       "value": "\"WebView\""
     },
     {
-      "filePath": "\/Users\/sammikliv\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Logging\/Logger+WebView.swift",
+      "filePath": "\/Users\/saraandersson\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Logging\/Logger+WebView.swift",
       "kind": "StringLiteral",
       "offset": 248,
       "length": 22,
       "value": "\"com.insurely.verbose\""
     },
     {
-      "filePath": "\/Users\/sammikliv\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Logging\/Logger+WebView.swift",
+      "filePath": "\/Users\/saraandersson\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Logging\/Logger+WebView.swift",
       "kind": "StringLiteral",
       "offset": 282,
       "length": 9,
       "value": "\"WebView\""
     },
     {
-      "filePath": "\/Users\/sammikliv\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Instruction Execution\/InstructionExecutor.swift",
+      "filePath": "\/Users\/saraandersson\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Instruction Execution\/InstructionExecutor.swift",
       "kind": "IntegerLiteral",
       "offset": 513,
       "length": 1,
       "value": "0"
     },
     {
-      "filePath": "\/Users\/sammikliv\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Web Message Bridge\/Messages\/AppCloseEvent.swift",
+      "filePath": "\/Users\/saraandersson\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Web Message Bridge\/Messages\/AppCloseEvent.swift",
       "kind": "StringLiteral",
       "offset": 336,
       "length": 11,
       "value": "\"APP_CLOSE\""
     },
     {
-      "filePath": "\/Users\/sammikliv\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Prepopulation\/Configuration\/InsurelyConfiguration+LogosVariant.swift",
+      "filePath": "\/Users\/saraandersson\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Prepopulation\/Configuration\/InsurelyConfiguration+LogosVariant.swift",
       "kind": "StringLiteral",
       "offset": 290,
       "length": 9,
       "value": "\"default\""
     },
     {
-      "filePath": "\/Users\/sammikliv\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Prepopulation\/Configuration\/InsurelyConfiguration+LogosVariant.swift",
+      "filePath": "\/Users\/saraandersson\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Prepopulation\/Configuration\/InsurelyConfiguration+LogosVariant.swift",
       "kind": "StringLiteral",
       "offset": 371,
       "length": 11,
       "value": "\"deBranded\""
     },
     {
-      "filePath": "\/Users\/sammikliv\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Prepopulation\/Configuration\/InsurelyConfiguration+LogosVariant.swift",
+      "filePath": "\/Users\/saraandersson\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Prepopulation\/Configuration\/InsurelyConfiguration+LogosVariant.swift",
       "kind": "StringLiteral",
       "offset": 452,
       "length": 9,
       "value": "\"noLogos\""
     },
     {
-      "filePath": "\/Users\/sammikliv\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Logging\/Logger+Auth.swift",
+      "filePath": "\/Users\/saraandersson\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Web View\/Model\/WebModel.swift",
+      "kind": "BooleanLiteral",
+      "offset": 714,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/saraandersson\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Web View\/Model\/WebModel.swift",
+      "kind": "StringLiteral",
+      "offset": 1184,
+      "length": 36,
+      "value": "\"💥 Failed to evaluate JavaScript\""
+    },
+    {
+      "filePath": "\/Users\/saraandersson\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Logging\/Logger+Auth.swift",
       "kind": "StringLiteral",
       "offset": 154,
       "length": 18,
       "value": "\"com.insurely.sdk\""
     },
     {
-      "filePath": "\/Users\/sammikliv\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Logging\/Logger+Auth.swift",
+      "filePath": "\/Users\/saraandersson\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Logging\/Logger+Auth.swift",
       "kind": "StringLiteral",
       "offset": 184,
       "length": 6,
       "value": "\"Auth\""
     },
     {
-      "filePath": "\/Users\/sammikliv\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Logging\/Logger+Auth.swift",
+      "filePath": "\/Users\/saraandersson\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Logging\/Logger+Auth.swift",
       "kind": "StringLiteral",
       "offset": 239,
       "length": 22,
       "value": "\"com.insurely.verbose\""
     },
     {
-      "filePath": "\/Users\/sammikliv\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Logging\/Logger+Auth.swift",
+      "filePath": "\/Users\/saraandersson\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Logging\/Logger+Auth.swift",
       "kind": "StringLiteral",
       "offset": 273,
       "length": 6,
