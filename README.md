@@ -42,7 +42,7 @@ For projects that use a `Package.swift` manifest:
 ```swift
 .package(
     url: "https://github.com/insurely/insurely-sdk-ios-distribution.git",
-    from: "1.2.0"
+    from: "1.3.0"
 )
 ```
 
@@ -132,6 +132,38 @@ InsurelyConfiguration(
 
 Dark mode rendering requires your `BlocksConfig` to include at least one `ConnectedTheme`. With both `light` and `dark` identifiers configured server-side, passing `themeMode: .system` will follow the host's color scheme automatically. Contact your Insurely account representative if you need help setting up `ConnectedTheme` rows for your configuration.
 
+## Auth token
+
+Available from 1.3.0. Flows that call authenticated APIs, such as the overview, need an auth token. Pass it via the optional `authToken` parameter on `InsurelyConfiguration`, including the scheme:
+
+```swift
+@State private var authToken = initialAuthToken // e.g. "Bearer abc.def.ghi"
+
+InsurelyView(
+    context: context,
+    configuration: InsurelyConfiguration(
+        customerId: "...",
+        configName: "...",
+        authToken: authToken
+    )
+)
+.onInsurelyEvent { event in
+    switch event {
+    case is AuthTokenExpiringSoonEvent:
+        Task { authToken = try await fetchNewToken() }
+    case is AppCloseEvent:
+        dismiss()
+    default:
+        break
+    }
+}
+```
+
+- The token must include its scheme (e.g. `Bearer `) and an `exp` claim. A token in any other format shows a configuration error, and a token without `exp` is treated as expired.
+- To replace the token while the view is running, pass a configuration with the new token. `authToken` is the only configuration property that takes effect after the view has been created. The module replies with `ValidAuthTokenEvent` or `InvalidAuthTokenEvent`. It checks only the token's format, not whether it has expired.
+- `AuthTokenExpiringSoonEvent` arrives five minutes before the token expires, at most once per session. If a session can outlive more than one token, refresh based on the token's expiry instead of waiting for the event.
+- When the token expires, including when the app returns from the background with an expired token, the module sends `AppCloseEvent`. Dismiss the `InsurelyView` then, since the module cannot close itself.
+
 ## Versioning
 
 The SDK follows [Semantic Versioning](https://semver.org/). Breaking changes happen only on major version bumps. Within a major version, you can safely use the `Up to Next Major Version` SPM requirement to receive new features and fixes automatically.
@@ -158,7 +190,7 @@ Each release attaches an `InsurelySDK.doccarchive` documentation bundle as a rel
 
 The bundle contains:
 
-- A Getting Started guide covering setup, the Insurely View, theme modes, and Swedish BankID configuration.
+- A Getting Started guide covering setup, the Insurely View, theme modes, auth tokens, and Swedish BankID configuration.
 - Full API reference for every public type, property, and callback modifier.
 
 ## Support

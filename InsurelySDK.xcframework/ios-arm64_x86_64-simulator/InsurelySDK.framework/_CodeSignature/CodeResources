@@ -10,47 +10,47 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		u2ZZfmigG+6h41UCdU9MclVHa0U=
+		wRc0UkmsSc4S3tWWa0hCxohmKNc=
 		</data>
 		<key>Modules/InsurelySDK.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		9rpgcW56gQQDy5JqdYmyzsIYVvI=
+		dkPkfrUMRgQKU5CsP3zbt6H2Zkk=
 		</data>
 		<key>Modules/InsurelySDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		bSOlApqYWd6h3vMiu3oFSH1MNYQ=
+		ydXJi8Juwg7kOPd4ty3PsuOcBmM=
 		</data>
 		<key>Modules/InsurelySDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		BRHuoue74AgntrhPkOXXg5ubvm4=
+		L4LrfMDgNZyA52lg55GX4tw6970=
 		</data>
 		<key>Modules/InsurelySDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		bSOlApqYWd6h3vMiu3oFSH1MNYQ=
+		ydXJi8Juwg7kOPd4ty3PsuOcBmM=
 		</data>
 		<key>Modules/InsurelySDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		AAtGR10T/1NmIj6riczAQETYOUo=
+		0MyZRYW7CrrtPRVLajSMYszESl4=
 		</data>
 		<key>Modules/InsurelySDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		9rpgcW56gQQDy5JqdYmyzsIYVvI=
+		dkPkfrUMRgQKU5CsP3zbt6H2Zkk=
 		</data>
 		<key>Modules/InsurelySDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		dFvROA03TUONRqZ9Y35d1ThaQYg=
+		pGAD147fW9sOHaklqusD1EDQogA=
 		</data>
 		<key>Modules/InsurelySDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		SVsgxZYb33IgNiY8guLGyJc1Il8=
+		AcauMD0VdMpkSOVK8dH/3WzMtZs=
 		</data>
 		<key>Modules/InsurelySDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		dFvROA03TUONRqZ9Y35d1ThaQYg=
+		pGAD147fW9sOHaklqusD1EDQogA=
 		</data>
 		<key>Modules/InsurelySDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		HtghupvqCP0V/sHFV9Pwmp/KxvU=
+		1vNrxfSC5+++ol8NduZfV4P0sgg=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -74,70 +74,70 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			yDg58U9mL93UJ/RngTiW1aPfdHkkfJq//XLW+toynpQ=
+			xxxUTlPCD7yrvzirbg6M6Dx8w6zCkA7M8CX9JpAQ3rc=
 			</data>
 		</dict>
 		<key>Modules/InsurelySDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			w/HCLQL7g/Xf2iP5f9tTrrXswslhvAaZPtjcgx96vJE=
+			ew8QZhUqoLbALEebfp/HN05XFHYsrdlsOPZ/OuTtaOI=
 			</data>
 		</dict>
 		<key>Modules/InsurelySDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			YdT6K+GM6QWTBHwOD2+Wanr9FUhDyqVH5SQymkjjB/c=
+			Vv0BltbnQfv6rCpgWaPFTVY9YHBmdFEE/pi5WIV5wDc=
 			</data>
 		</dict>
 		<key>Modules/InsurelySDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			w/HCLQL7g/Xf2iP5f9tTrrXswslhvAaZPtjcgx96vJE=
+			ew8QZhUqoLbALEebfp/HN05XFHYsrdlsOPZ/OuTtaOI=
 			</data>
 		</dict>
 		<key>Modules/InsurelySDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			8w20VhVsSIEL676Du7VTeZKiJwAzFE5DV5MlnB7aDkI=
+			HR3qgVRsn044cUpZ2fHCL+fWWO/K2ySDgzyOkZS8pQM=
 			</data>
 		</dict>
 		<key>Modules/InsurelySDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			yDg58U9mL93UJ/RngTiW1aPfdHkkfJq//XLW+toynpQ=
+			xxxUTlPCD7yrvzirbg6M6Dx8w6zCkA7M8CX9JpAQ3rc=
 			</data>
 		</dict>
 		<key>Modules/InsurelySDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			yG+WSv/AIDbDaaT2lpevTsPaltCSAtBVs8xPH1tjrYo=
+			ff3xQz7Tz72DxF+PLB2qluGtRi4LKEl0qyLr03ViWk4=
 			</data>
 		</dict>
 		<key>Modules/InsurelySDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			jkdwvq0QI9cE5aw1g3XdTZzGv9mlBtaXn2A7bPGWApE=
+			reIFa1Qlv61viDSZyMWIWkyqV8Bld7lk+ToU1UsY0Tg=
 			</data>
 		</dict>
 		<key>Modules/InsurelySDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			yG+WSv/AIDbDaaT2lpevTsPaltCSAtBVs8xPH1tjrYo=
+			ff3xQz7Tz72DxF+PLB2qluGtRi4LKEl0qyLr03ViWk4=
 			</data>
 		</dict>
 		<key>Modules/InsurelySDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ROhWZNn2Snsq5qgqWVdIGUPScSqIMPzZD0GFWaD6NIQ=
+			u+27Y08vZGADggyXMsk/NaWFKFRK5EYUXEYK/TTkIGw=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
