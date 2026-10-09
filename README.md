@@ -42,7 +42,7 @@ For projects that use a `Package.swift` manifest:
 ```swift
 .package(
     url: "https://github.com/insurely/insurely-sdk-ios-distribution.git",
-    from: "1.3.1"
+    from: "1.4.0"
 )
 ```
 
