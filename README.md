@@ -5,8 +5,7 @@ The Insurely iOS SDK lets you embed the Insurely user interface in your iOS app.
 ## Requirements
 
 - iOS 15.0 or later
-- Xcode 15.0 or later
-- Swift 5.10 or later
+- Xcode 26 or later. Your app can use the Swift 5 or Swift 6 language mode.
 
 Use of the SDK is governed by the terms of your agreement with Insurely AB. See `LICENSE` for details.
 
