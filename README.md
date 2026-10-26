@@ -42,7 +42,7 @@ For projects that use a `Package.swift` manifest:
 ```swift
 .package(
     url: "https://github.com/insurely/insurely-sdk-ios-distribution.git",
-    from: "1.4.0"
+    from: "1.4.1"
 )
 ```
 
@@ -113,6 +113,27 @@ struct InsurelyScreen: View {
 ```
 
 Insurely provides your `customerId` and `configName` during onboarding.
+
+## Swedish BankID
+
+When the user signs in with BankID on the same device, the SDK opens the BankID app. It checks that
+BankID is installed first, so add `bankid` to `LSApplicationQueriesSchemes` in your app's
+`Info.plist`. Without it, iOS reports BankID as not installed, and every attempt fails with
+`.failedToOpenBankID`.
+
+```xml
+<key>LSApplicationQueriesSchemes</key>
+<array>
+    <string>bankid</string>
+</array>
+```
+
+To bring the user back to your app afterwards, pass a URL scheme or universal link that opens your app
+as `bankIDRedirectURL`:
+
+```swift
+InsurelyContext(environment: .production, bankIDRedirectURL: "yourapp://insurely")
+```
 
 ## Theme mode
 
