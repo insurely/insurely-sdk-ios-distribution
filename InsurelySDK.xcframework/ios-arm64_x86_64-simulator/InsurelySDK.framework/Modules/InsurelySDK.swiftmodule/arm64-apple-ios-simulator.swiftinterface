@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.4 effective-5.10 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)
+// swift-compiler-version: Apple Swift version 6.4.2 effective-5.10 (swiftlang-6.4.2.1.9 clang-2100.4.1.1)
 // swift-module-flags: -target arm64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -language-mode 5 -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name InsurelySDK
-// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.4
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.4.2
 import Combine
 import Foundation
 @_exported import InsurelySDK
@@ -44,8 +44,12 @@ extension InsurelySDK::InsurelyPrefill {
   public struct DataAggregation : Swift::Codable {
     public var company: Swift::String?
     public var companies: [Swift::String]?
+    @available(*, deprecated, message: "Has no effect, and will be removed. Nothing starts the login automatically.")
     public var autostart: Swift::Bool
+    @available(*, deprecated, message: "Has no effect, and will be removed. The preferred login method is set in your configuration.")
     public var loginMethod: Swift::String?
+    public init(company: Swift::String? = nil, companies: [Swift::String]? = nil)
+    @available(*, deprecated, message: "autostart and loginMethod have no effect. Use init(company:companies:).")
     public init(company: Swift::String? = nil, companies: [Swift::String]? = nil, autostart: Swift::Bool, loginMethod: Swift::String? = nil)
     public func encode(to encoder: any Swift::Encoder) throws
     public init(from decoder: any Swift::Decoder) throws
@@ -152,13 +156,14 @@ extension InsurelySDK::InsurelyConfiguration {
     public init(from decoder: any Swift::Decoder) throws
   }
 }
-public enum InsurelyError : Swift::Error {
+public enum InsurelyError : Swift::Error, Swift::Equatable {
   case failedToOpenBankID
+  case invalidCredentials
+  case invalidAuthToken
+  case collectionFailed(cause: Swift::String?, collectionStatus: Swift::String?, message: Swift::String?)
+  case nonRecoverableError(type: Swift::String?)
+  case loadFailed(url: Foundation::URL?, statusCode: Swift::Int?, description: Swift::String?)
   public static func == (a: InsurelySDK::InsurelyError, b: InsurelySDK::InsurelyError) -> Swift::Bool
-  public func hash(into hasher: inout Swift::Hasher)
-  public var hashValue: Swift::Int {
-    get
-  }
 }
 public struct WaitingForInitializationEvent : InsurelySDK::InsurelyEvent {
   public static let name: Swift::String
@@ -498,8 +503,6 @@ extension InsurelySDK::InsurelyLogLevel : Swift::Hashable {}
 extension InsurelySDK::InsurelyLogLevel : Swift::RawRepresentable {}
 extension InsurelySDK::OnInsurelyErrorModifier : Swift::Sendable {}
 extension InsurelySDK::InsurelyView : Swift::Sendable {}
-extension InsurelySDK::InsurelyError : Swift::Equatable {}
-extension InsurelySDK::InsurelyError : Swift::Hashable {}
 extension InsurelySDK::CollectionStatus : Swift::Equatable {}
 extension InsurelySDK::CollectionStatus : Swift::Hashable {}
 extension InsurelySDK::OnInsurelyResultsModifier : Swift::Sendable {}
