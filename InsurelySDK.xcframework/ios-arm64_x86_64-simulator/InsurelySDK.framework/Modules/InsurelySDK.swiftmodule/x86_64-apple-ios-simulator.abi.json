@@ -10831,7 +10831,350 @@
             "declKind": "EnumElement",
             "usr": "s:11InsurelySDK0A5ErrorO18failedToOpenBankIDyA2CmF",
             "mangledName": "$s11InsurelySDK0A5ErrorO18failedToOpenBankIDyA2CmF",
-            "moduleName": "InsurelySDK"
+            "moduleName": "InsurelySDK",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "invalidCredentials",
+            "printedName": "invalidCredentials",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(InsurelySDK.InsurelyError.Type) -> InsurelySDK.InsurelyError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "InsurelyError",
+                    "printedName": "InsurelySDK.InsurelyError",
+                    "usr": "s:11InsurelySDK0A5ErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "InsurelySDK.InsurelyError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "InsurelyError",
+                        "printedName": "InsurelySDK.InsurelyError",
+                        "usr": "s:11InsurelySDK0A5ErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:11InsurelySDK0A5ErrorO18invalidCredentialsyA2CmF",
+            "mangledName": "$s11InsurelySDK0A5ErrorO18invalidCredentialsyA2CmF",
+            "moduleName": "InsurelySDK",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "invalidAuthToken",
+            "printedName": "invalidAuthToken",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(InsurelySDK.InsurelyError.Type) -> InsurelySDK.InsurelyError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "InsurelyError",
+                    "printedName": "InsurelySDK.InsurelyError",
+                    "usr": "s:11InsurelySDK0A5ErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "InsurelySDK.InsurelyError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "InsurelyError",
+                        "printedName": "InsurelySDK.InsurelyError",
+                        "usr": "s:11InsurelySDK0A5ErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:11InsurelySDK0A5ErrorO16invalidAuthTokenyA2CmF",
+            "mangledName": "$s11InsurelySDK0A5ErrorO16invalidAuthTokenyA2CmF",
+            "moduleName": "InsurelySDK",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "collectionFailed",
+            "printedName": "collectionFailed",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(InsurelySDK.InsurelyError.Type) -> (Swift.String?, Swift.String?, Swift.String?) -> InsurelySDK.InsurelyError",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Swift.String?, Swift.String?, Swift.String?) -> InsurelySDK.InsurelyError",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "InsurelyError",
+                        "printedName": "InsurelySDK.InsurelyError",
+                        "usr": "s:11InsurelySDK0A5ErrorO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(cause: Swift.String?, collectionStatus: Swift.String?, message: Swift.String?)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "Swift.String?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "String",
+                                "printedName": "Swift.String",
+                                "usr": "s:SS"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "Swift.String?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "String",
+                                "printedName": "Swift.String",
+                                "usr": "s:SS"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "Swift.String?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "String",
+                                "printedName": "Swift.String",
+                                "usr": "s:SS"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "InsurelySDK.InsurelyError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "InsurelyError",
+                        "printedName": "InsurelySDK.InsurelyError",
+                        "usr": "s:11InsurelySDK0A5ErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:11InsurelySDK0A5ErrorO16collectionFailedyACSSSg_A2EtcACmF",
+            "mangledName": "$s11InsurelySDK0A5ErrorO16collectionFailedyACSSSg_A2EtcACmF",
+            "moduleName": "InsurelySDK",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "nonRecoverableError",
+            "printedName": "nonRecoverableError",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(InsurelySDK.InsurelyError.Type) -> (Swift.String?) -> InsurelySDK.InsurelyError",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Swift.String?) -> InsurelySDK.InsurelyError",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "InsurelyError",
+                        "printedName": "InsurelySDK.InsurelyError",
+                        "usr": "s:11InsurelySDK0A5ErrorO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(type: Swift.String?)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "Swift.String?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "String",
+                                "printedName": "Swift.String",
+                                "usr": "s:SS"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "InsurelySDK.InsurelyError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "InsurelyError",
+                        "printedName": "InsurelySDK.InsurelyError",
+                        "usr": "s:11InsurelySDK0A5ErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:11InsurelySDK0A5ErrorO014nonRecoverableC0yACSSSg_tcACmF",
+            "mangledName": "$s11InsurelySDK0A5ErrorO014nonRecoverableC0yACSSSg_tcACmF",
+            "moduleName": "InsurelySDK",
+            "declAttributes": [
+              "RawDocComment"
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "loadFailed",
+            "printedName": "loadFailed",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(InsurelySDK.InsurelyError.Type) -> (Foundation.URL?, Swift.Int?, Swift.String?) -> InsurelySDK.InsurelyError",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Foundation.URL?, Swift.Int?, Swift.String?) -> InsurelySDK.InsurelyError",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "InsurelyError",
+                        "printedName": "InsurelySDK.InsurelyError",
+                        "usr": "s:11InsurelySDK0A5ErrorO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(url: Foundation.URL?, statusCode: Swift.Int?, description: Swift.String?)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "Foundation.URL?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "URL",
+                                "printedName": "Foundation.URL",
+                                "usr": "s:10Foundation3URLV"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "Swift.Int?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Int",
+                                "printedName": "Swift.Int",
+                                "usr": "s:Si"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Optional",
+                            "printedName": "Swift.String?",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "String",
+                                "printedName": "Swift.String",
+                                "usr": "s:SS"
+                              }
+                            ],
+                            "usr": "s:Sq"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "InsurelySDK.InsurelyError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "InsurelyError",
+                        "printedName": "InsurelySDK.InsurelyError",
+                        "usr": "s:11InsurelySDK0A5ErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:11InsurelySDK0A5ErrorO10loadFailedyAC10Foundation3URLVSg_SiSgSSSgtcACmF",
+            "mangledName": "$s11InsurelySDK0A5ErrorO10loadFailedyAC10Foundation3URLVSg_SiSgSSSgtcACmF",
+            "moduleName": "InsurelySDK",
+            "declAttributes": [
+              "RawDocComment"
+            ]
           },
           {
             "kind": "Function",
@@ -10864,70 +11207,6 @@
             "static": true,
             "implicit": true,
             "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Var",
-            "name": "hashValue",
-            "printedName": "hashValue",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Int",
-                "printedName": "Swift.Int",
-                "usr": "s:Si"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:11InsurelySDK0A5ErrorO9hashValueSivp",
-            "mangledName": "$s11InsurelySDK0A5ErrorO9hashValueSivp",
-            "moduleName": "InsurelySDK",
-            "implicit": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Int",
-                    "printedName": "Swift.Int",
-                    "usr": "s:Si"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:11InsurelySDK0A5ErrorO9hashValueSivg",
-                "mangledName": "$s11InsurelySDK0A5ErrorO9hashValueSivg",
-                "moduleName": "InsurelySDK",
-                "implicit": true,
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
-            "kind": "Function",
-            "name": "hash",
-            "printedName": "hash(into:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Hasher",
-                "printedName": "Swift.Hasher",
-                "paramValueOwnership": "InOut",
-                "usr": "s:s6HasherV"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:11InsurelySDK0A5ErrorO4hash4intoys6HasherVz_tF",
-            "mangledName": "$s11InsurelySDK0A5ErrorO4hash4intoys6HasherVz_tF",
-            "moduleName": "InsurelySDK",
-            "implicit": true,
-            "funcSelfKind": "NonMutating"
           }
         ],
         "declKind": "Enum",
@@ -10948,6 +11227,13 @@
           },
           {
             "kind": "Conformance",
+            "name": "Error",
+            "printedName": "Error",
+            "usr": "s:s5ErrorP",
+            "mangledName": "$ss5ErrorP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Equatable",
             "printedName": "Equatable",
             "usr": "s:SQ",
@@ -10959,20 +11245,6 @@
             "printedName": "Escapable",
             "usr": "s:s9EscapableP",
             "mangledName": "$ss9EscapableP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Hashable",
-            "printedName": "Hashable",
-            "usr": "s:SH",
-            "mangledName": "$sSH"
-          },
-          {
-            "kind": "Conformance",
-            "name": "Error",
-            "printedName": "Error",
-            "usr": "s:s5ErrorP",
-            "mangledName": "$ss5ErrorP"
           },
           {
             "kind": "Conformance",
@@ -16886,9 +17158,12 @@
                 "usr": "s:11InsurelySDK0A7PrefillV15DataAggregationV9autostartSbvp",
                 "mangledName": "$s11InsurelySDK0A7PrefillV15DataAggregationV9autostartSbvp",
                 "moduleName": "InsurelySDK",
+                "deprecated": true,
                 "declAttributes": [
+                  "HasInitialValue",
                   "HasStorage",
                   "AccessControl",
+                  "Available",
                   "RawDocComment"
                 ],
                 "hasStorage": true,
@@ -16951,7 +17226,11 @@
                     "usr": "s:11InsurelySDK0A7PrefillV15DataAggregationV9autostartSbvM",
                     "mangledName": "$s11InsurelySDK0A7PrefillV15DataAggregationV9autostartSbvM",
                     "moduleName": "InsurelySDK",
+                    "deprecated": true,
                     "implicit": true,
+                    "declAttributes": [
+                      "Available"
+                    ],
                     "accessorKind": "_modify"
                   }
                 ]
@@ -16980,10 +17259,12 @@
                 "usr": "s:11InsurelySDK0A7PrefillV15DataAggregationV11loginMethodSSSgvp",
                 "mangledName": "$s11InsurelySDK0A7PrefillV15DataAggregationV11loginMethodSSSgvp",
                 "moduleName": "InsurelySDK",
+                "deprecated": true,
                 "declAttributes": [
                   "HasInitialValue",
                   "HasStorage",
                   "AccessControl",
+                  "Available",
                   "RawDocComment"
                 ],
                 "hasStorage": true,
@@ -17062,10 +17343,74 @@
                     "usr": "s:11InsurelySDK0A7PrefillV15DataAggregationV11loginMethodSSSgvM",
                     "mangledName": "$s11InsurelySDK0A7PrefillV15DataAggregationV11loginMethodSSSgvM",
                     "moduleName": "InsurelySDK",
+                    "deprecated": true,
                     "implicit": true,
+                    "declAttributes": [
+                      "Available"
+                    ],
                     "accessorKind": "_modify"
                   }
                 ]
+              },
+              {
+                "kind": "Constructor",
+                "name": "init",
+                "printedName": "init(company:companies:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "DataAggregation",
+                    "printedName": "InsurelySDK.InsurelyPrefill.DataAggregation",
+                    "usr": "s:11InsurelySDK0A7PrefillV15DataAggregationV"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "hasDefaultArg": true,
+                    "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "[Swift.String]?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Array",
+                        "printedName": "[Swift.String]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          }
+                        ],
+                        "usr": "s:Sa"
+                      }
+                    ],
+                    "hasDefaultArg": true,
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Constructor",
+                "usr": "s:11InsurelySDK0A7PrefillV15DataAggregationV7company9companiesAESSSg_SaySSGSgtcfc",
+                "mangledName": "$s11InsurelySDK0A7PrefillV15DataAggregationV7company9companiesAESSSg_SaySSGSgtcfc",
+                "moduleName": "InsurelySDK",
+                "declAttributes": [
+                  "AccessControl",
+                  "RawDocComment"
+                ],
+                "init_kind": "Designated"
               },
               {
                 "kind": "Constructor",
@@ -17142,9 +17487,10 @@
                 "usr": "s:11InsurelySDK0A7PrefillV15DataAggregationV7company9companies9autostart11loginMethodAESSSg_SaySSGSgSbAJtcfc",
                 "mangledName": "$s11InsurelySDK0A7PrefillV15DataAggregationV7company9companies9autostart11loginMethodAESSSg_SaySSGSgSbAJtcfc",
                 "moduleName": "InsurelySDK",
+                "deprecated": true,
                 "declAttributes": [
                   "AccessControl",
-                  "RawDocComment"
+                  "Available"
                 ],
                 "init_kind": "Designated"
               },
@@ -18730,6 +19076,26 @@
             "usr": "s:s9EscapableP",
             "mangledName": "$ss9EscapableP"
           }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "InsurelySDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "InsurelySDK",
+        "declAttributes": [
+          "RawDocComment"
         ]
       },
       {
@@ -20453,6 +20819,13 @@
       "value": "\"sdk\""
     },
     {
+      "filePath": "\/Users\/sammikliv\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Prepopulation\/Prefill\/InsurelyPrefill+DataAggregation.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1129,
+      "length": 5,
+      "value": "false"
+    },
+    {
       "filePath": "\/Users\/sammikliv\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Logging\/Logger+Instruction.swift",
       "kind": "StringLiteral",
       "offset": 161,
@@ -20483,7 +20856,7 @@
     {
       "filePath": "\/Users\/sammikliv\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Web Message Bridge\/Messages\/InvalidAuthTokenEvent.swift",
       "kind": "StringLiteral",
-      "offset": 201,
+      "offset": 382,
       "length": 20,
       "value": "\"INVALID_AUTH_TOKEN\""
     },
@@ -20693,9 +21066,23 @@
     {
       "filePath": "\/Users\/sammikliv\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Web Message Bridge\/Messages\/InvalidCredentialsEvent.swift",
       "kind": "StringLiteral",
-      "offset": 206,
+      "offset": 389,
       "length": 21,
       "value": "\"INVALID_CREDENTIALS\""
+    },
+    {
+      "filePath": "\/Users\/sammikliv\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Web Message Bridge\/Messages\/NonRecoverableErrorMessage.swift",
+      "kind": "StringLiteral",
+      "offset": 269,
+      "length": 23,
+      "value": "\"NON_RECOVERABLE_ERROR\""
+    },
+    {
+      "filePath": "\/Users\/sammikliv\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Web Message Bridge\/Messages\/CollectionErrorMessage.swift",
+      "kind": "StringLiteral",
+      "offset": 322,
+      "length": 7,
+      "value": "\"ERROR\""
     },
     {
       "filePath": "\/Users\/sammikliv\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Web Message Bridge\/Messages\/ResultsEvent.swift",
@@ -20840,14 +21227,14 @@
     {
       "filePath": "\/Users\/sammikliv\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Web View\/Model\/WebModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 714,
+      "offset": 938,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/sammikliv\/Documents\/code\/insurely-sdk-ios\/Sources\/InsurelySDK\/Web View\/Model\/WebModel.swift",
       "kind": "StringLiteral",
-      "offset": 1184,
+      "offset": 1408,
       "length": 36,
       "value": "\"💥 Failed to evaluate JavaScript\""
     },

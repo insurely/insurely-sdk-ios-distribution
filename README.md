@@ -41,7 +41,7 @@ For projects that use a `Package.swift` manifest:
 ```swift
 .package(
     url: "https://github.com/insurely/insurely-sdk-ios-distribution.git",
-    from: "1.4.1"
+    from: "2.0.0"
 )
 ```
 
@@ -100,10 +100,14 @@ struct InsurelyScreen: View {
         }
         .onInsurelyError { error in
             switch error {
-            case .failedToOpenBankID:
-                // Optionally surface a fallback UI.
+            case .loadFailed:
+                // The flow couldn't load, e.g. no network. Offer a way to try again.
                 break
-            @unknown default:
+            case .nonRecoverableError:
+                // The flow is showing its error screen and can't continue. Dismiss it.
+                break
+            default:
+                // Such as .failedToOpenBankID or .collectionFailed. Log it or show a message.
                 break
             }
         }
@@ -180,7 +184,7 @@ InsurelyView(
 ```
 
 - The token must include its scheme (e.g. `Bearer `) and an `exp` claim. A token in any other format shows a configuration error, and a token without `exp` is treated as expired.
-- To replace the token while the view is running, pass a configuration with the new token. `authToken` is the only configuration property that takes effect after the view has been created. The module replies with `ValidAuthTokenEvent` or `InvalidAuthTokenEvent`. It checks only the token's format, not whether it has expired.
+- To replace the token while the view is running, pass a configuration with the new token. `authToken` is the only configuration property that takes effect after the view has been created. The module replies with `ValidAuthTokenEvent`, or with `.invalidAuthToken` in `onInsurelyError`. It checks only the token's format, not whether it has expired.
 - `AuthTokenExpiringSoonEvent` arrives five minutes before the token expires, at most once per session. If a session can outlive more than one token, refresh based on the token's expiry instead of waiting for the event.
 - When the token expires, including when the app returns from the background with an expired token, the module sends `AppCloseEvent`. Dismiss the `InsurelyView` then, since the module cannot close itself.
 
