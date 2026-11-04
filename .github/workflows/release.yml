@@ -4,19 +4,18 @@
 # version bump is merged there. This repository is what customers install:
 # Swift Package Manager resolves its tags, and Package.swift serves the
 # committed xcframework. So each version gets a PR here, from a branch named
-# release/<version>, that commits that build's xcframework and docs. Its
-# description is the release notes.
+# release/<version>, that commits that build's xcframework. Its description
+# is the release notes.
 #
 # While the PR is open, a check fails unless the branch names a new version,
 # the xcframework says that version and carries Insurely's signature, the PR
-# changes both the xcframework and the docs, the README's package rule
-# covers it, the description has notes, and a consumer package builds
-# against the PR's own copy. Make the check required in the branch rules, so
+# changes the xcframework, the README's package rule covers it, the
+# description has notes, and a consumer package builds against the PR's own
+# copy. Make the check required in the branch rules, so
 # a red one blocks the merge: merging is what customers get.
 #
 # On merge, this creates the release: the version as its tag, on the merge
-# commit, the PR description as its notes, and the xcframework and docs
-# attached. Then it runs the consumer smoke test against the new tag, since a
+# commit, the PR description as its notes, and the xcframework attached. Then it runs the consumer smoke test against the new tag, since a
 # release created by a workflow doesn't start the smoke test's own trigger.
 #
 # If a run fails after the merge, fix the cause and re-run it from the Actions
@@ -97,19 +96,13 @@ jobs:
           fi
           exit $STATUS
 
-      - name: Check the PR updates the xcframework and the docs
+      - name: Check the PR updates the xcframework
         run: |
           FILES="$(gh pr view "$PR_NUMBER" --json files --jq '.files[].path')"
-          STATUS=0
           if ! printf '%s\n' "$FILES" | grep -q '^InsurelySDK\.xcframework/'; then
             echo "::error::The PR doesn't change InsurelySDK.xcframework."
-            STATUS=1
+            exit 1
           fi
-          if ! printf '%s\n' "$FILES" | grep -qx 'InsurelySDK\.doccarchive\.zip'; then
-            echo "::error::The PR doesn't change InsurelySDK.doccarchive.zip. Commit the docs from the same release build."
-            STATUS=1
-          fi
-          exit $STATUS
 
       - name: Check the README's package rule covers it
         env:
@@ -181,7 +174,6 @@ jobs:
           gh pr view "$PR_NUMBER" --json body --jq .body > "$RUNNER_TEMP/notes.md"
           gh release create "$VERSION" \
             "$RUNNER_TEMP/InsurelySDK.xcframework.zip" \
-            InsurelySDK.doccarchive.zip \
             --target "$MERGE_SHA" \
             --title "$VERSION" \
             --notes-file "$RUNNER_TEMP/notes.md"
