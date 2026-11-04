@@ -1,0 +1,195 @@
+# Creates the GitHub release for an SDK version when its release PR is merged.
+#
+# The SDK is built and signed in CI in the private SDK repository when a
+# version bump is merged there. This repository is what customers install:
+# Swift Package Manager resolves its tags, and Package.swift serves the
+# committed xcframework. So each version gets a PR here, from a branch named
+# release/<version>, that commits that build's xcframework and docs. Its
+# description is the release notes.
+#
+# While the PR is open, a check fails unless the branch names a new version,
+# the xcframework says that version and carries Insurely's signature, the PR
+# changes both the xcframework and the docs, the README's package rule
+# covers it, the description has notes, and a consumer package builds
+# against the PR's own copy. Make the check required in the branch rules, so
+# a red one blocks the merge: merging is what customers get.
+#
+# On merge, this creates the release: the version as its tag, on the merge
+# commit, the PR description as its notes, and the xcframework and docs
+# attached. Then it runs the consumer smoke test against the new tag, since a
+# release created by a workflow doesn't start the smoke test's own trigger.
+#
+# If a run fails after the merge, fix the cause and re-run it from the Actions
+# tab. It reads the description when it runs, so an edited one is picked up.
+name: Release
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize, reopened, closed]
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    name: Check the release PR
+    # Only our own release branches: while open, and on close only a merge.
+    if: >-
+      startsWith(github.head_ref, 'release/') &&
+      github.event.pull_request.head.repo.full_name == github.repository &&
+      (github.event.action == 'closed' && github.event.pull_request.merged ||
+       github.event.action != 'closed' && github.event.pull_request.state == 'open')
+    # Each edit or push starts a new check, which replaces one still running.
+    # The check before a release is never cancelled.
+    concurrency:
+      group: check-${{ github.event.pull_request.number }}-${{ github.event.action == 'closed' && 'merged' || 'open' }}
+      cancel-in-progress: true
+    runs-on: macos-latest
+    permissions:
+      contents: read
+      pull-requests: read
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+      PR_NUMBER: ${{ github.event.pull_request.number }}
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.merged && github.event.pull_request.merge_commit_sha || github.event.pull_request.head.sha }}
+
+      - name: Read the version from the branch name
+        id: version
+        env:
+          HEAD_REF: ${{ github.head_ref }}
+        run: |
+          VERSION="${HEAD_REF#release/}"
+          if ! printf '%s' "$VERSION" | grep -Eq '^[0-9]+\.[0-9]+\.[0-9]+$'; then
+            echo "::error::'$HEAD_REF' does not name a version. Release branches are release/<major>.<minor>.<patch>."
+            exit 1
+          fi
+          if gh release view "$VERSION" >/dev/null 2>&1; then
+            echo "::error::Release $VERSION already exists."
+            exit 1
+          fi
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+
+      - name: Check the xcframework is that version, signed by Insurely
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          STATUS=0
+          for PLIST in InsurelySDK.xcframework/*/InsurelySDK.framework/Info.plist; do
+            FOUND="$(/usr/libexec/PlistBuddy -c 'Print :CFBundleShortVersionString' "$PLIST")"
+            if [ "$FOUND" != "$VERSION" ]; then
+              echo "::error::$PLIST says $FOUND, not $VERSION. Commit the xcframework from the $VERSION release build."
+              STATUS=1
+            fi
+          done
+          if ! codesign --verify InsurelySDK.xcframework; then
+            echo "::error::The xcframework's signature is missing or broken."
+            STATUS=1
+          elif ! codesign -dvv InsurelySDK.xcframework 2>&1 | grep -q '^Authority=Apple Distribution: Insurely AB (32C7UPRBS6)$'; then
+            echo "::error::The xcframework isn't signed with Insurely's Apple Distribution certificate."
+            STATUS=1
+          fi
+          exit $STATUS
+
+      - name: Check the PR updates the xcframework and the docs
+        run: |
+          FILES="$(gh pr view "$PR_NUMBER" --json files --jq '.files[].path')"
+          STATUS=0
+          if ! printf '%s\n' "$FILES" | grep -q '^InsurelySDK\.xcframework/'; then
+            echo "::error::The PR doesn't change InsurelySDK.xcframework."
+            STATUS=1
+          fi
+          if ! printf '%s\n' "$FILES" | grep -qx 'InsurelySDK\.doccarchive\.zip'; then
+            echo "::error::The PR doesn't change InsurelySDK.doccarchive.zip. Commit the docs from the same release build."
+            STATUS=1
+          fi
+          exit $STATUS
+
+      - name: Check the README's package rule covers it
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          MAJOR="${VERSION%%.*}"
+          if ! grep -Eq "from: \"$MAJOR\.[0-9]+\.[0-9]+\"" README.md; then
+            echo "::error::README.md's package rule isn't from: \"$MAJOR.x.y\", so following it won't install $VERSION."
+            exit 1
+          fi
+
+      - name: Check the description has release notes
+        # Read when the job runs rather than from the event, so re-running a
+        # failed release after editing the description picks the edit up.
+        run: |
+          if [ -z "$(gh pr view "$PR_NUMBER" --json body --jq .body | tr -d '[:space:]')" ]; then
+            echo "::error::The PR description is empty, and it is the release notes."
+            exit 1
+          fi
+
+      - name: Build a consumer package against this PR's xcframework
+        # The smoke test proves a released tag works. This proves the same of
+        # the PR, before merging makes it what customers resolve.
+        if: github.event.action != 'closed'
+        run: |
+          CONSUMER="$RUNNER_TEMP/consumer"
+          mkdir -p "$CONSUMER"
+          cp -r .github/consumer-smoke-test/. "$CONSUMER/"
+          python3 - "$CONSUMER/Package.swift" "$GITHUB_WORKSPACE" <<'EOF'
+          import re, sys
+          path, checkout = sys.argv[1], sys.argv[2]
+          source = open(path).read()
+          source, count = re.subn(r'\.package\(\s*url:[^)]*\)', f'.package(path: "{checkout}")', source)
+          assert count == 1, "expected one package dependency"
+          open(path, "w").write(source)
+          EOF
+          cd "$CONSUMER"
+          xcodebuild \
+            -scheme ConsumerSmokeTest \
+            -destination 'generic/platform=iOS Simulator' \
+            -skipMacroValidation \
+            build
+
+  release:
+    name: Release
+    needs: check
+    if: github.event.action == 'closed'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: read
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+      VERSION: ${{ needs.check.outputs.version }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.merge_commit_sha }}
+
+      - name: Zip the xcframework
+        run: zip -qry "$RUNNER_TEMP/InsurelySDK.xcframework.zip" InsurelySDK.xcframework
+
+      - name: Create the release
+        env:
+          MERGE_SHA: ${{ github.event.pull_request.merge_commit_sha }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          gh pr view "$PR_NUMBER" --json body --jq .body > "$RUNNER_TEMP/notes.md"
+          gh release create "$VERSION" \
+            "$RUNNER_TEMP/InsurelySDK.xcframework.zip" \
+            InsurelySDK.doccarchive.zip \
+            --target "$MERGE_SHA" \
+            --title "$VERSION" \
+            --notes-file "$RUNNER_TEMP/notes.md"
+          echo "Released [$VERSION]($(gh release view "$VERSION" --json url --jq .url))." >> "$GITHUB_STEP_SUMMARY"
+
+  smoke-test:
+    name: Smoke test the release
+    needs: [check, release]
+    uses: ./.github/workflows/consumer-smoke-test.yml
+    with:
+      version: ${{ needs.check.outputs.version }}
