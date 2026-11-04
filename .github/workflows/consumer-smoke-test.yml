@@ -22,14 +22,22 @@
 name: Consumer smoke test
 
 on:
+  # A release published by hand. One created by release.yml doesn't trigger
+  # this, since workflows don't start workflows, so release.yml calls it.
   release:
     types: [published]
+  workflow_call:
+    inputs:
+      version:
+        type: string
+        required: true
+  # Only changes to this test itself. It resolves a released tag, so a PR that
+  # changes the xcframework is checked by release.yml instead, against the
+  # PR's own copy.
   pull_request:
     paths:
       - '.github/consumer-smoke-test/**'
       - '.github/workflows/consumer-smoke-test.yml'
-      - 'Package.swift'
-      - 'InsurelySDK.xcframework/**'
   workflow_dispatch:
     inputs:
       version:
